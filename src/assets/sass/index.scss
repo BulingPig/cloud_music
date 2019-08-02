@@ -1,0 +1,34 @@
+@import './reset.css';
+@import './mixin.scss';
+#root{
+    color:red;
+    font-size: px2rem(14px);
+    text-align: center;
+    .navWrap{
+        height: px2rem(45px);width: 100%;
+        background: #ecebe9;
+        position: absolute;
+        bottom: px2rem(0px);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+       
+        .nav{
+            .iconfont{
+                height: px2rem(22px);
+                width: px2rem(22px);
+                border:1px solid #ecebe9;
+                margin-left: px2rem(-2px);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                text-decoration: none;
+            }
+            text-decoration: none;
+            font-size: px2rem(7px);
+            display: flex;
+            align-items: center;
+        }
+    }
+}
