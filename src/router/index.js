@@ -3,6 +3,11 @@ import My from '../views/My'
 import Video from '../views/Video'
 import Friend from '../views/Friend'
 import Account from '../views/Account'
+// 账户的二级路由
+import Information from "../views/Account/Information"
+import ShoppingHouse from "../views/Account/ShoppingHouse"
+import Movie from "../views/Account/Movie"
+import ChangeClothes from '../views/Account/ChangeClothes';
 
 const routers = [
     {
@@ -58,7 +63,37 @@ const routers = [
         component:Account,
         meta:{
             title:"网易云音乐"
-        }
+        },
+        children:[
+            {
+                to:"/account/information",
+                path:"/account/information",
+                context:"消息",
+                component:Information,
+                iconfontName:"iconfont icon-xinfeng"
+            },
+            {
+                to:"/account/shoppinghouse",
+                path:"/account/shoppinghouse",
+                context:"商城",
+                component:ShoppingHouse,
+                iconfontName:"iconfont icon-xinfeng"
+            },
+            {
+                to:"/account/movie",
+                path:"/account/movie",
+                context:"演出",
+                component:Movie,
+                iconfontName:"iconfont icon-xinfeng"
+            },
+            {
+                to:"/account/changeclothes",
+                path:"/account/changeclothes",
+                context:"个性换肤",
+                component:ChangeClothes,
+                iconfontName:"iconfont icon-xinfeng"
+            }
+        ]
     },
 ]
 

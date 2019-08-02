@@ -1,7 +1,8 @@
 @import './reset.css';
 @import './mixin.scss';
+@import'./account.scss';
 #root{
-    color:red;
+    // color:red;
     font-size: px2rem(14px);
     text-align: center;
     .navWrap{

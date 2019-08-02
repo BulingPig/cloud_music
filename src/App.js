@@ -1,5 +1,4 @@
 
-import logo from './logo.svg';
 import './assets/sass/index.scss';
 import React, { Component } from 'react'
 import router from './router'

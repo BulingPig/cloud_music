@@ -1,0 +1,80 @@
+@import './mixin.scss';
+/*----------------------------账号头部-------------------------------*/
+.account-header{
+    .icon-saoyisao{
+        margin-left:px2rem(15px);
+    }
+    .icon-jiezou{
+        margin-right:px2rem(15px);
+    }
+    width: 100%;
+    height: px2rem(58px);
+    background: #d73d33;
+    color: #fff;
+    font-size: px2rem(16px);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*----------------------------账号登录按钮附近-------------------------------*/
+.account-button{
+    p{
+        line-height: px2rem(25px);
+    }
+    input{
+        width: px2rem(358px);
+        height:px2rem(35px);
+        border: px2rem(1px) solid #dfdfdf;
+        border-radius: px2rem(20px);
+        background: #fff;
+    }
+}
+/*----------------------------VIP-------------------------------*/
+.account-vip{
+    width: px2rem(358px);
+    height:px2rem(56px);
+    border: px2rem(1px) solid #dfdfdf;
+    border-radius: px2rem(5px);
+    background: #272727;
+    margin-top:px2rem(25px);
+    margin-left: px2rem(9px);
+    position: relative;
+    .vip{
+        color: #f8dcda;
+        font-size: px2rem(12px);
+        font-weight: 900;
+        position: absolute;
+        top: px2rem(14px);
+        left:px2rem(14px);
+    }
+    .newfive{
+        color: #727272;
+        font-size: px2rem(10px);
+        position: absolute;
+        top: px2rem(34px);
+        left:px2rem(14px);
+    }
+    .forfree{
+        color: #b4b4b4;
+        font-size: px2rem(12px);
+        position: absolute;
+        top: px2rem(22px);
+        right:px2rem(52px);
+    }
+    .icon-huo-div{
+        .icon-huo{
+            line-height: px2rem(30px);
+            font-size: px2rem(20px);
+            color: red;
+        }
+        width: px2rem(30px);
+        height: px2rem(30px);
+        border-radius: 50%;
+        position: absolute;
+        top: px2rem(12px);
+        right:px2rem(15px);
+        background: #ffd76e;
+
+    }
+}
+/*------------------------------消息、商城、演出、个性换肤 -----------------------------*/
