@@ -10,7 +10,6 @@ import {
 import GuradRoute from './router/GuradRoute'
 class App extends Component {
   componentWillMount(){
-    document.documentElement.style.fontSize = document.documentElement.clientWidth/10 + "px";
   }
   render() {
     return (

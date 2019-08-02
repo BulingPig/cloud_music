@@ -36,7 +36,20 @@ const routers = [
         component:My,
         meta:{
             title:"网易云音乐"
-        }
+        },
+        children:[
+            {
+                to:"my/localMusic",
+                exact:false,
+                path:"my/localMusic",
+                context:"本地音乐",
+                iconfontName:"",
+                component:"",
+                meta:{
+                    
+                }
+            }
+        ]  
     },
     {
         to:"/friend",

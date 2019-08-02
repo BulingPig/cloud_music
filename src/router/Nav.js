@@ -12,19 +12,27 @@ export default class Nav extends Component {
                 {
                     router.routers.map((v,i)=>{
                         return(
-                            
-                                
-                                <NavLink key={i} className="nav" exact={v.exact}  to={v.to} style={{color:"#939391"}} activeStyle={{color:"#e5443a"}}>  
-                                    <div >
-                                        <NavLink to={v.to} exact={v.exact} className={v.iconfontName} style={{color:"#939391",fontSize:"20px"}}  activeStyle={{color:"#fff",borderColor:"#e5443a",background:"#e5443a",fontSize:"16px"}}></NavLink>                          
-                                        {v.context}
-                                    </div>
+                            <div key={i}>
+                                <NavLink to={v.to} exact={v.exact} className={v.iconfontName} style={{
+                                    borderColor:"#ecebe9",
+                                    background:"#ecebe9",
+                                    fontSize:"20px"
+                                    }}  activeStyle={{
+                                        color:"#fff",
+                                        borderRadius:"50%",
+                                        borderColor:"#e5443a",
+                                        background:"#e5443a",
+                                        fontSize:"16px"
+                                        }}>
+                                </NavLink>                          
+                                <NavLink  className="nav" exact={v.exact}  to={v.to} style={{color:"#939391"}} activeStyle={{color:"#e5443a"}}>                                     
+                                    {v.context}
                                 </NavLink>
-                           
-                           
+                            </div>
                         )
                     })
                 }
+                
             </div>
         )
     }

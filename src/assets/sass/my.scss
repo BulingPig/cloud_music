@@ -1,0 +1,26 @@
+@import './mixin.scss';
+
+#my{
+    .my_top{
+        position: fixed;
+        top: px2rem(0px);
+        display: flex;
+        height: px2rem(45px);
+        width: 100%;
+        color: #fff;
+        background: #da3f3b;
+        justify-content: space-between;
+        align-items: center;
+        .icon-cloud{
+            margin-left: px2rem(15px)
+        }
+        .icon-jiezou{
+            margin-right: px2rem(15px)
+        }
+    }
+    .my_tab{
+        margin-top: px2rem(45px);
+        height: px2rem(92px);
+        border-bottom: px2rem(2px) solid #fbfbfb;
+    }
+}
