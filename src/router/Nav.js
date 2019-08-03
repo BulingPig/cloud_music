@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { 
     NavLink,
-    Link
  } from "react-router-dom";
 import router from './index'
 import "../assets/iconfont/iconfont.css"
@@ -12,6 +11,7 @@ export default class Nav extends Component {
                 {
                     router.routers.map((v,i)=>{
                         return(
+                            v.isShow?null:
                             <div key={i}>
                                 <NavLink to={v.to} exact={v.exact} className={v.iconfontName} style={{
                                     borderColor:"#ecebe9",
