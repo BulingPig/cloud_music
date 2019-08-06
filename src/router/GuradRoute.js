@@ -7,6 +7,7 @@ import {
 
 class GuradRoute extends Component {
     render() {
+        //console.log(1111,this.props)
         return (
             <div>
                 <this.props.component {...this.props}/>
@@ -16,4 +17,4 @@ class GuradRoute extends Component {
     }
 }
 
-export default withRouter(GuradRoute)
+export default GuradRoute

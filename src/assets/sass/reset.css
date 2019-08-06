@@ -1,7 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 ul,li{
     list-style: none;
 }
+i{font-style: normal}
+b{font-weight: normal}

@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 
-export default class TabComponent extends Component {
+export default class PersonFM extends Component {
     render() {
         return (
-            <div className="my_tab">
+            <div>
                 
             </div>
         )
     }
 }
-
-
-

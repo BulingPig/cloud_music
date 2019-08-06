@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import router from './router'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
 } from "react-router-dom"
 import GuradRoute from './router/GuradRoute'
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
           {
             router.routers.map((v,i)=>{
               return(
-                <Route key={i} path={v.path} exact={v.exact} render={()=><GuradRoute {...v}></GuradRoute>}></Route>
+                 <Route key={i} path={v.path} exact={v.exact} render={()=><GuradRoute {...v}></GuradRoute>}></Route>
               )
             })
           }

@@ -1,7 +1,7 @@
 @import './mixin.scss';
 
-#my{
-    .my_top{
+#my{ 
+        .my_top{
         position: fixed;
         top: px2rem(0px);
         display: flex;
@@ -17,10 +17,145 @@
         .icon-jiezou{
             margin-right: px2rem(15px)
         }
-    }
+    }//****************未完成的轮播************************
     .my_tab{
         margin-top: px2rem(45px);
         height: px2rem(92px);
         border-bottom: px2rem(2px) solid #fbfbfb;
     }
+    
+    #my_midddleRouter{
+        
+        .my_midddleRouter{
+            display: flex;
+            justify-content: space-between;
+        }
+        .link{
+            display: flex;
+            color: #000;
+            font-size: px2rem(16px);
+            height: px2rem(45px);
+            width: 84%;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        .iconfont{
+            display: flex;
+            color: #000;
+            font-size: px2rem(28px);
+            height: px2rem(45px);
+            width: 16%;
+            justify-content: center;
+            align-items: center;
+        }//这里有个底边框还未清除
+        
+    }
+    #myLoveMusic{
+        height: px2rem(50px);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+        .left{
+            margin-left: px2rem(15px)
+        }
+        .right{
+            margin-right: px2rem(15px);
+            .icon-gengduo{
+                margin-left: px2rem(20px);
+            }
+        }
+        
+    }
+    #songList{
+        .heart{
+            margin-left: px2rem(15px);
+            display:block;
+            float: left;
+            height: px2rem(45px);
+            width: px2rem(45px);
+            border-radius: px2rem(4px);
+            background: #da3f3b;
+            margin-right: px2rem(5px);
+            .icon-xin{
+                display: inline-block;
+                margin-top: px2rem(4px);
+                color: #fff;
+                font-size: px2rem(35px);
+                margin-left: px2rem(5px);
+            }
+        }
+        #love{
+            display: block;
+            padding-top: px2rem(15px);
+            .love{
+                
+                display: block;
+                text-align: left;
+                font-size: px2rem(12px);
+            }
+            #songNum{ 
+                display: block;
+                text-align: left;
+                font-size: px2rem(10px);
+                .icon-wodeshoucang{
+                    font-size: px2rem(10px);
+                    color: #da3f3b;
+                }
+            }
+        }
+    }
+    #recommend{
+        width: px2rem(350px);
+        margin-top: px2rem(10px);
+        margin-left: px2rem(15px);
+        margin-right: px2rem(15px);
+        #heart{
+            display: inline-block;
+            height: px2rem(20px);
+            width: px2rem(20px);
+            border-radius: 50%;
+            background: #da3f3b;
+            margin-right: px2rem(5px);
+            .icon-xin{
+                display: inline-block;
+                color:#fff;
+                margin-left: px2rem(4px);
+                font-size: px2rem(12px);
+            }
+        }
+       #songList{
+           margin-bottom: px2rem(70px);   
+           margin-top: px2rem(10px);
+           width: px2rem(350px);
+           display: flex;
+           justify-content: space-around;
+           flex-wrap: wrap;
+           .wrapLoop{
+               margin-bottom: px2rem(8px);
+               .pic{
+                   height: px2rem(100px);
+                   width: px2rem(100px);
+                   margin-bottom: px2rem(5px);
+                   .imges{
+                       width: 100%;
+                       height: 100%;
+                       border-radius: px2rem(5px);
+                   }
+               }
+               .text{
+                   font-size: px2rem(12px);
+                   width: px2rem(105px);
+                   height: px2rem(30px);
+                   display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+               }
+           }
+       }
+    
+    }
+    
 }
