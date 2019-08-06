@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import "../../assets/iconfont/iconfont.css"
+import "../../assets/iconfont-account1/iconfont.css"
 import "../../assets/sass/account.scss"
-import router from "../../router/index"
-import Nav from '../../router/Nav'
+import router from "../../router"
+
 import {
     NavLink,
 } from "react-router-dom"
 
-export default class UserNumber extends Component {
+export default class Account extends Component {
     render() {
         return (
             <div>
@@ -141,7 +142,6 @@ export default class UserNumber extends Component {
                         </div>
                     </div>
                 </div>
-                <Nav></Nav>
             </div>
         )
     }

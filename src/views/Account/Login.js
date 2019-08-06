@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../assets/sass/account.scss"
-import "../../assets/iconfont-account/iconfont.css"
+import "../../assets/iconfont/iconfont.css"
 import "../../assets/iconfont-account1/iconfont.css"
 import Nav from "../../router/Nav"
 import router from "../../router/index"

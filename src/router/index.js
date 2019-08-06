@@ -4,6 +4,8 @@ import Video from '../views/Video'
 import Friend from '../views/Friend'
 import Account from '../views/Account'
 import accountRouters from "./account"
+import my_router from './my'
+
 
 const routers = [
     {
@@ -61,17 +63,18 @@ const routers = [
     {
         to:"/account",
         type:"main",
+        exact:true,
         path:"/account",
         context:"账号",
         iconfontName:"iconfont icon-ren",
         component:Account,
         isShow:false,
-        exact:true,
         meta:{
             title:"网易云音乐"
         }
     },
-    ...accountRouters
+    ...accountRouters,
+    ...my_router,
 ]
 
 export default {

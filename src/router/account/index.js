@@ -96,7 +96,6 @@ const routers=[
         path:"/account/login",
         context:"登录",
         component:Login,
-        isShow:true,
         type:3,
     },
     {
@@ -104,7 +103,6 @@ const routers=[
         path:"/account/phonelogin",
         context:"手机登录",
         component:PhoneLogin,
-        isShow:true,
         type:3,
     },
     {
@@ -112,7 +110,6 @@ const routers=[
         path:"/account/verification",
         context:"手机号验证",
         component:Verification,
-        isShow:true,
         type:3,
     },
     {
@@ -120,7 +117,6 @@ const routers=[
         path:"/account/password",
         context:"密码验证",
         component:PassWord,
-        isShow:true,
         type:3,
     },
     {
@@ -128,7 +124,6 @@ const routers=[
         path:"/account/Register",
         context:"注册信息",
         component:Register,
-        isShow:true,
         type:3,
     },
 ]

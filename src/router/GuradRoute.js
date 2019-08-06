@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
-
-import { 
+import {
     withRouter
- } from "react-router-dom";
+} from "react-router-dom"
 
 class GuradRoute extends Component {
     render() {

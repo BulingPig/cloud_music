@@ -34,8 +34,8 @@ export default class Recommend extends Component {
         )
     }
     async componentDidMount(){
-        const {data} = await axios.get("/wangyi/personalized?limit=6")
-        //console.log(data.result)
+        const data = await axios.get("/personalized?limit=6")
+ 
         this.setState({
             recommendList:data.result
         })
