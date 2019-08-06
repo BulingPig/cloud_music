@@ -1,5 +1,5 @@
 import React from 'react';
-import Axios from '_axios@0.19.0@axios';
+import axios from 'axios';
 export default class PassWord extends React.Component{
     constructor(props){
         super(props);
@@ -43,7 +43,7 @@ export default class PassWord extends React.Component{
         )
     }
     onclickTo(){
-       Axios.get("login/cellphone?phone="+localStorage.phone+"&password="+this.refs.password.value)
+       axios.get("login/cellphone?phone="+localStorage.phone+"&password="+this.refs.password.value)
        .then(data=>{
         //    console.log(data)
            localStorage.userData = data;

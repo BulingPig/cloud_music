@@ -1,5 +1,5 @@
 import React from 'react';
-import Axios from '_axios@0.19.0@axios';
+import axios from 'axios';
 export default class Register extends React.Component{
     constructor(props){
         super(props);
@@ -53,7 +53,7 @@ export default class Register extends React.Component{
     }
     getcaptch(){
         let phone = this.refs.phone.value;
-        Axios.get("/captcha/sent?phone="+phone)
+        axios.get("/captcha/sent?phone="+phone)
         .then(data=>{
             
         })
@@ -64,7 +64,7 @@ export default class Register extends React.Component{
         let password = this.refs.password.value;
         let nickname = this.refs.nickname.value;
         
-        Axios.get("/register/cellphone?phone="+phone+"&password="+password+"&captcha="+captcha+"&nickname="+nickname)
+        axios.get("/register/cellphone?phone="+phone+"&password="+password+"&captcha="+captcha+"&nickname="+nickname)
         .then(data=>{
             // localStorage.phone = phone;
             this.props.history.push("/")

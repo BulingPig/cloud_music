@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../assets/sass/account.scss"
 import "../../assets/iconfont-account/iconfont.css"
-import Axios from '_axios@0.19.0@axios';
+import axios from 'axios';
 export default class PhoneLogin extends React.Component{
     constructor(props){
         super(props);
@@ -61,7 +61,7 @@ export default class PhoneLogin extends React.Component{
         /**
          * *************************检测手机号是否注册
          */
-        Axios.get("/cellphone/existence/check?phone="+phoneNumber)
+        axios.get("/cellphone/existence/check?phone="+phoneNumber)
         .then( data =>{
             localStorage.phone = phoneNumber;
             if(data.exist!==-1){//如果注册，就跳转到登录

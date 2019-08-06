@@ -1,5 +1,5 @@
 import React from 'react';
-import Axios from '_axios@0.19.0@axios';
+import axios from 'axios';
 export default class Verification extends React.Component{
     constructor(props){
         super(props);
@@ -40,7 +40,7 @@ export default class Verification extends React.Component{
         let phone = localStorage.phone;
          if(this.refs.number.value.length === 4){
                     console.log(11111111111111)
-                    Axios.get("/captcha/verify?phone="+phone+"&captcha="+this.refs.number.value)
+                    axios.get("/captcha/verify?phone="+phone+"&captcha="+this.refs.number.value)
                     .then(data=>{
                         this.props.history.push("/account/Register")
                     })
@@ -63,7 +63,7 @@ export default class Verification extends React.Component{
     componentDidMount(){
         // console.log(localStorage.phone)
         let phone = localStorage.phone;
-        Axios.get("/captcha/sent?phone="+phone)
+        axios.get("/captcha/sent?phone="+phone)
         .then(data=>{
 
         })
