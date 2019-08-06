@@ -2,7 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import axios from 'axios';
 import * as serviceWorker from './serviceWorker';
+
+axios.interceptors.request.use(config=>{
+     config.url = "/wangyi/"+config.url;
+     return config;
+})
+axios.interceptors.response.use(({data})=>{
+    return data;
+})
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

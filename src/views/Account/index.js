@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "../../assets/iconfont/iconfont.css"
 import "../../assets/sass/account.scss"
 import router from "../../router/index"
+import Nav from '../../router/Nav'
 import {
     NavLink,
 } from "react-router-dom"
@@ -38,10 +39,10 @@ export default class UserNumber extends Component {
                     {
                         router.routers.map((v,i)=>{
                             return(
-                                v.isShow?
-                                <div style={{float:"left"}}>
-                                    <p key={Date.now()} className={v.iconfontName}></p>
-                                    <NavLink key={i} to={v.to}>{v.context}</NavLink>
+                                v.type === 2?
+                                <div style={{float:"left"}} key={i}>
+                                    <p className={v.iconfontName}></p>
+                                    <NavLink to={v.to}>{v.context}</NavLink>
                                 </div>:null
                                 
                             ) 
@@ -140,6 +141,7 @@ export default class UserNumber extends Component {
                         </div>
                     </div>
                 </div>
+                <Nav></Nav>
             </div>
         )
     }

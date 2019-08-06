@@ -1,5 +1,8 @@
 @import './mixin.scss';
 /*----------------------------账号头部-------------------------------*/
+*{
+    text-align: center;
+}
 .account-header{
     .icon-saoyisao{
         margin-left:px2rem(15px);
@@ -94,6 +97,27 @@
 
     }
 }
+/*----------------------------我的消息---------------------------*/
+.myInformation{
+    width: px2rem(345px);
+    height: px2rem(25px);
+    border: px2rem(1px) solid #d73d33;
+    border-radius: px2rem(8px);
+    margin: px2rem(15px) 0 0 px2rem(15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    // .everyone{
+    //     width: px2rem(87px);
+    //     height: 100%;
+    //     border-radius: px2rem(8px);
+    //     background: #d73d33;
+    //     font-size: px2rem(14px);
+    // }
+    
+}
+
 /*------------------------------列表 -----------------------------*/
 .account-list{
     .account-list-dingdan{
@@ -172,6 +196,7 @@
             line-height: px2rem(36px);
             color: #fff;
             font-weight: 900;
+            font-size: px2rem(20px);
         }
         .login-qq{
             width: px2rem(36px);
@@ -184,6 +209,7 @@
             line-height: px2rem(36px);
             color: #fff;
             font-weight: 900;
+            font-size: px2rem(20px);
         }
         .login-weibo{
             width: px2rem(36px);
@@ -196,6 +222,7 @@
             line-height: px2rem(36px);
             color: #fff;
             font-weight: 900;
+            font-size: px2rem(20px);
         }
         .login-wangyi{
             width: px2rem(36px);
@@ -208,6 +235,7 @@
             line-height: px2rem(36px);
             color: #fff;
             font-weight: 900;
+            font-size: px2rem(20px);
         }
 
     }
@@ -218,4 +246,70 @@
         bottom:px2rem(8px);
         left: px2rem(112px);
     }
+}
+
+/*----------------------手机号登录------------------------------*/
+.login-back{
+    margin-left: px2rem(15px);
+}
+.phone-login-words{
+    position: absolute;
+    left:px2rem(12px);
+    top:px2rem(110px);
+    color: #a0a0a0;
+}
+.phone-number{
+    position: absolute;
+    left:px2rem(12px);
+    top:px2rem(167px);
+    width: px2rem(348px);
+    height:px2rem(30px);
+    border-bottom: px2rem(2px) solid #f4f4f4;
+    span{
+        position: absolute;
+        left:px2rem(0px);
+        font-weight: 900;
+        font-size: px2rem(16px);
+    }
+    input{
+        border: none;
+        position: absolute;
+        left:px2rem(45px);
+        top: px2rem(3px);
+        outline: none;
+        font-size: px2rem(16px);
+    }
+    
+}
+.phone-login-next{
+    width: px2rem(346px);
+    height: px2rem(40px);
+    position: absolute;
+    top: px2rem(230px);
+    left: px2rem(15px);
+    background: #f13b30;
+    border-radius: px2rem(20px);
+    border: none;
+    outline: none;
+}
+.popBox{
+    width: px2rem(150px);
+    height: px2rem(70px);
+    background: #000;
+    opacity: 0.8;
+    border-radius: px2rem(8px);
+    position: absolute;
+    top: px2rem(200px);
+    left: px2rem(105px);
+    color: #fff;
+    line-height: px2rem(70px);
+    display: none;
+}
+/*-------------------------重设密码------------------------------*/
+.rePassword{
+    position: absolute;
+    top: px2rem(280px);
+    left: px2rem(164px);
+    font-size: px2rem(12px);
+    color: #a0a0a0;
 }

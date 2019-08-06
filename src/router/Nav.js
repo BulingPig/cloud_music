@@ -11,7 +11,7 @@ export default class Nav extends Component {
                 {
                     router.routers.map((v,i)=>{
                         return(
-                            v.isShow?null:
+                            v.type === 1?
                             <div key={i}>
                                 <NavLink to={v.to} exact={v.exact} className={v.iconfontName} style={{
                                     borderColor:"#ecebe9",
@@ -28,7 +28,7 @@ export default class Nav extends Component {
                                 <NavLink  className="nav" exact={v.exact}  to={v.to} style={{color:"#939391"}} activeStyle={{color:"#e5443a"}}>                                     
                                     {v.context}
                                 </NavLink>
-                            </div>
+                            </div>:null
                         )
                     })
                 }
