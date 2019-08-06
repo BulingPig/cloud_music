@@ -1,0 +1,61 @@
+@import './mixin.scss';
+
+.vidWrap{
+    // background-color:green;
+    overflow:hidden;
+    // width:100%;
+    // height: 100%;
+}
+.navBar{
+    
+    .navoinp{
+        display: block;
+        margin-top: px2rem(25px);
+        width: px2rem(277px);
+        height: px2rem(36px);
+        margin:0 auto;
+        margin-top:20px;
+        font-size:px2rem(15px);
+        font-weight: 100;
+        color:white;
+        outline:none;
+        background: rgb(250, 4, 4);
+        text-align: center;
+        border-radius: px2rem(20px);
+        opacity:0.7;
+        position:relative;
+
+    };
+  
+    .iconone{
+        color:white;
+        position:absolute;
+        font-size:px2rem(18px);
+        width: px2rem(14px);
+        height: px2rem(16px);
+        top:px2rem(30px);
+        left:px2rem(95px);
+    }
+    .icontwo{
+        color:white;
+        position:absolute;
+        font-size:px2rem(18px);
+        width: px2rem(24px);
+        height: px2rem(18px);
+        top:px2rem(30px);
+        left:px2rem(15px);
+    }
+    .iconthree{
+        color:white;
+        position:absolute;
+        font-size:px2rem(18px);
+        width: px2rem(24px);
+        height: px2rem(18px);
+        top:px2rem(30px);
+        right:px2rem(15px);
+    }
+}
+// ********************list*****************
+.main{
+    overflow: hidden;
+}
