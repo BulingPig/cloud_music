@@ -1,5 +1,27 @@
-* {
+/*腾讯总局样式  以后自己用*/
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+dt,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
     margin: 0;
+<<<<<<< HEAD
     padding: 0;
     text-decoration: none;
 }
@@ -8,3 +30,48 @@ ul,li{
 }
 i{font-style: normal}
 b{font-weight: normal}
+=======
+    padding: 0
+}
+
+body {
+    font: 14px "微软雅黑", "Arial Narrow", HELVETICA;
+    background: #fff;
+}
+
+a {
+    color: #172c45;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+body,
+html {
+    width: 100%;
+}
+>>>>>>> 362ad6f0e692ae362fe8abaaa2457d4cb6980552

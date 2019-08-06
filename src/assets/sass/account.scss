@@ -1,0 +1,221 @@
+@import './mixin.scss';
+/*----------------------------账号头部-------------------------------*/
+.account-header{
+    .icon-saoyisao{
+        margin-left:px2rem(15px);
+    }
+    .icon-jiezou{
+        margin-right:px2rem(15px);
+    }
+    width: 100%;
+    height: px2rem(58px);
+    background: #d73d33;
+    color: #fff;
+    font-size: px2rem(16px);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*----------------------------账号登录按钮附近-------------------------------*/
+.account-button{
+    p{
+        line-height: px2rem(25px);
+    }
+    input{
+        width: px2rem(358px);
+        height:px2rem(35px);
+        border: px2rem(1px) solid #dfdfdf;
+        border-radius: px2rem(20px);
+        background: #fff;
+    }
+}
+/*----------------------------VIP-------------------------------*/
+.account-vip{
+    width: px2rem(358px);
+    height:px2rem(56px);
+    border: px2rem(1px) solid #dfdfdf;
+    border-radius: px2rem(5px);
+    background: #272727;
+    margin-top:px2rem(25px);
+    margin-left: px2rem(9px);
+    position: relative;
+    .vip{
+        color: #f8dcda;
+        font-size: px2rem(12px);
+        font-weight: 900;
+        position: absolute;
+        top: px2rem(14px);
+        left:px2rem(14px);
+    }
+    .newfive{
+        color: #727272;
+        font-size: px2rem(10px);
+        position: absolute;
+        top: px2rem(34px);
+        left:px2rem(14px);
+    }
+    .forfree{
+        color: #b4b4b4;
+        font-size: px2rem(12px);
+        position: absolute;
+        top: px2rem(22px);
+        right:px2rem(52px);
+    }
+    .icon-huo-div{
+        .icon-huo{
+            line-height: px2rem(30px);
+            font-size: px2rem(20px);
+            color: red;
+        }
+        width: px2rem(30px);
+        height: px2rem(30px);
+        border-radius: 50%;
+        position: absolute;
+        top: px2rem(12px);
+        right:px2rem(15px);
+        background: #ffd76e;
+
+    }
+}
+/*------------------------------消息、商城、演出、个性换肤 -----------------------------*/
+.account-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: px2rem(0px) px2rem(34px);
+    margin-top: px2rem(17px);
+    div{
+        p{
+            color: red;
+            font-size: px2rem(24px);
+        }
+        NavLink{
+            color: #434343;
+        }
+
+    }
+}
+/*------------------------------列表 -----------------------------*/
+.account-list{
+    .account-list-dingdan{
+        .icon-icon--,.icon-dingdan,.icon-shezhi,.icon-yejianmoshi,.icon-timer,
+        .icon-icon-test,.icon-icon,.icon-youhuiquan,
+        .icon-maikefeng,.icon-fenxiang,.icon-about{
+            width: px2rem(44px);
+            height: px2rem(44px);
+            font-size: px2rem(18px);
+            line-height: px2rem(44px);
+        }
+        .account-list-right{
+            width: px2rem(331px);
+            line-height: px2rem(44px);
+            border-bottom:px2rem(1px) solid #f8f8f8;
+            .account-list-right-left{
+                float: left;
+            }
+            .account-list-right-right{
+                float: right;
+                margin-right: px2rem(15px);
+            }
+        }
+        width: 100%;
+        height: px2rem(44px);
+        display: flex;
+        margin-top: px2rem(10px);
+    }
+}
+/*------------------------登录----------------------------------------*/
+.account-login{
+    background: #db3630;
+    width: 100%;
+    height: px2rem(667px);
+    position: relative;
+    .login-back{
+        font-size: px2rem(18px);
+        color: #fff;
+        position: absolute;
+        left: px2rem(18px);
+        top: px2rem(30px);
+    }
+    .login-logo{
+        position: absolute;
+        left: px2rem(150px);
+        top: px2rem(156px);
+        width: px2rem(75px);
+        height: px2rem(75px);
+        border-radius: 50%;
+        font-size: px2rem(45px);
+        color: #fff;
+        font-weight: 900;
+        background: #f13b30;
+        line-height: px2rem(75px);
+    }
+    .login-button{
+        width: px2rem(280px);
+        height: px2rem(42px);
+        background: #fff;
+        position: absolute;
+        bottom:px2rem(122px);
+        left: px2rem(48px);
+        border: none;
+        border-radius: px2rem(20px);
+        color: #f13b30;
+    }
+    div{
+        .login-weixin{
+            width: px2rem(36px);
+            height: px2rem(36px);
+            position: absolute;
+            bottom:px2rem(40px);
+            left: px2rem(53px);
+            border: px2rem(1px) solid #fff;
+            border-radius: 50%;
+            line-height: px2rem(36px);
+            color: #fff;
+            font-weight: 900;
+        }
+        .login-qq{
+            width: px2rem(36px);
+            height: px2rem(36px);
+            position: absolute;
+            bottom:px2rem(40px);
+            left: px2rem(130px);
+            border: px2rem(1px) solid #fff;
+            border-radius: 50%;
+            line-height: px2rem(36px);
+            color: #fff;
+            font-weight: 900;
+        }
+        .login-weibo{
+            width: px2rem(36px);
+            height: px2rem(36px);
+            position: absolute;
+            bottom:px2rem(40px);
+            left: px2rem(208px);
+            border: px2rem(1px) solid #fff;
+            border-radius: 50%;
+            line-height: px2rem(36px);
+            color: #fff;
+            font-weight: 900;
+        }
+        .login-wangyi{
+            width: px2rem(36px);
+            height: px2rem(36px);
+            position: absolute;
+            bottom:px2rem(40px);
+            left: px2rem(285px);
+            border: px2rem(1px) solid #fff;
+            border-radius: 50%;
+            line-height: px2rem(36px);
+            color: #fff;
+            font-weight: 900;
+        }
+
+    }
+    .login-agreement{
+        font-size: px2rem(10px);
+        color: #fff;
+        position: absolute;
+        bottom:px2rem(8px);
+        left: px2rem(112px);
+    }
+}
