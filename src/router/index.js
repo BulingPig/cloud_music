@@ -4,7 +4,7 @@ import Video from '../views/Video'
 import Friend from '../views/Friend'
 import Account from '../views/Account'
 import my_router from './my'
-import my_routers from './my';
+
 
 const routers = [
     {
