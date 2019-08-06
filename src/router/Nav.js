@@ -10,11 +10,7 @@ export default class Nav extends Component {
                 {
                     router.routers.map((v,i)=>{
                         return(
-<<<<<<< HEAD
                             v.type === "main"?
-=======
-                            v.isShow?null:
->>>>>>> 362ad6f0e692ae362fe8abaaa2457d4cb6980552
                             <div key={i}>
                                 <NavLink to={v.to} exact={v.exact} className={v.iconfontName} 
                                     style={{

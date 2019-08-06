@@ -21,16 +21,6 @@ input,
 textarea,
 select {
     margin: 0;
-<<<<<<< HEAD
-    padding: 0;
-    text-decoration: none;
-}
-ul,li{
-    list-style: none;
-}
-i{font-style: normal}
-b{font-weight: normal}
-=======
     padding: 0
 }
 
@@ -74,4 +64,3 @@ body,
 html {
     width: 100%;
 }
->>>>>>> 362ad6f0e692ae362fe8abaaa2457d4cb6980552
