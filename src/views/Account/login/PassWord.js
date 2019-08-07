@@ -45,9 +45,9 @@ export default class PassWord extends React.Component{
     onclickTo(){
        axios.get("login/cellphone?phone="+localStorage.phone+"&password="+this.refs.password.value)
        .then(data=>{
-        //    console.log(data)
-           localStorage.userData = data;
-           console.log(localStorage.userData);
+           console.log(data)
+           localStorage.pic = data.profile.avatarUrl;
+           localStorage.id = data.account.id;
         this.props.history.push("/")
        })
     }

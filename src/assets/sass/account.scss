@@ -20,6 +20,50 @@
     align-items: center;
 }
 /*----------------------------账号登录按钮附近-------------------------------*/
+.userPhoto{
+    width: px2rem(55px);
+    height: px2rem(55px);
+    border-radius: 50%;
+    position: absolute;
+    top:px2rem(67px);
+    left:px2rem(15px);
+}
+.myName{
+    position: absolute;
+    top:px2rem(75px);
+    left:px2rem(80px);
+}
+.myLv{
+    position: absolute;
+    top:px2rem(100px);
+    left:px2rem(80px);
+    width: px2rem(40px);
+    height: px2ren(18px);
+    background: #ebe4dc;
+    border-radius: px2rem(15px);
+}
+.signin{
+    position: absolute;
+    top:px2rem(74px);
+    left:px2rem(300px);
+    width: px2rem(60px);
+    height: px2ren(25px);
+    background: #e34836;
+    border-radius: px2rem(15px);
+    color: #fff;
+}
+.myInfromation{
+    width: 100%;
+    height: px2rem(110px);
+}
+.huashuoNav{
+    position: absolute;
+    top: px2rem(140px);
+    display: flex;
+    div{
+        width: px2rem(90px);
+    }
+}
 .account-button{
     p{
         line-height: px2rem(25px);
@@ -31,6 +75,44 @@
         border-radius: px2rem(20px);
         background: #fff;
     }
+}
+/*------------------------------关注列表---------------------------------*/
+.attentionList{
+    .signature{
+        display: block;
+        width: px2rem(270px);
+        position: absolute;
+        top: px2rem(35px);
+        left: px2rem(70px);
+        font-size: px2rem(12px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space:nowrap;
+        color: #949494;
+    }
+    .attentionName{
+        position: absolute;
+        top: px2rem(15px);
+        left: px2rem(70px);
+        font-size: px2rem(14px);
+    }
+    .attentionImg{
+        width: px2rem(46px);
+        height: px2rem(46px);
+        border-radius: 50%;
+        position: absolute;
+        top: px2rem(10px);
+        left: px2rem(15px);
+    }
+    position: relative;
+    width: 100%;
+    height: px2rem(65px);
+}
+/*----------------------------关注列表-------------------------------*/
+.fansName{
+    font-size: px2rem(14px);
+    line-height: px2rem(65px);
+    margin-right: px2rem(80px);
 }
 /*----------------------------VIP-------------------------------*/
 .account-vip{
@@ -146,6 +228,15 @@
         display: flex;
         margin-top: px2rem(10px);
     }
+}
+.account-list-dingdan .account-list-exit{
+    width: 100%;
+    height: px2rem(44px);
+    outline: none;
+    background: #fff;
+    font-size: px2rem(16px);
+    color: red;
+    border:none;
 }
 /*------------------------登录----------------------------------------*/
 .account-login{
