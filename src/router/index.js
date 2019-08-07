@@ -1,4 +1,4 @@
-import Find from '../views/Find/index'
+﻿import Find from '../views/Find/index'
 import My from '../views/My'
 import Video from '../views/Video'
 import Friend from '../views/Friend'
@@ -6,6 +6,9 @@ import Account from '../views/Account'
 import accountRouters from "./account"
 import my_middleRouter from './my/middlerouters'
 import my_tabRouter from './my/tabComponents'
+import findRouterList from "./Find"
+
+
 
 const routers = [
     {
@@ -75,7 +78,9 @@ const routers = [
     },
     ...accountRouters,
     ...my_middleRouter,
-    ...my_tabRouter
+    ...my_tabRouter,
+    ...findRouterList,
+
 ]
 
 export default {
