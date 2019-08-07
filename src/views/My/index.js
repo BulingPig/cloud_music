@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TopComponent from './TopComponent'
 import TabComponent from './tabComponents/TabComponent'
 import MyLoveMusic from './myLoveMusicComponent/MyLoveMusic'
-import Nav from '../../router/my/Nav'
+import Nav from '../../router/my/middlerouters/Nav'
 import Recommend from './recommend/Recommend'
 export default class My extends Component {
     render() {

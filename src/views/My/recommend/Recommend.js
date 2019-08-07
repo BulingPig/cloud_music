@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {
+    NavLink,
+} from 'react-router-dom'
 
 export default class Recommend extends Component {
     constructor(){
@@ -22,7 +25,7 @@ export default class Recommend extends Component {
                     {
                         this.state.recommendList.map((v,i)=>{
                             return(
-                                <div key={i} className="wrapLoop" >
+                                <div key={i} className="wrapLoop">
                                     <p className="pic"><img className="imges" src={v.picUrl} alt=""/></p>
                                     <p className="text">{v.name}</p>
                                 </div>
@@ -35,7 +38,6 @@ export default class Recommend extends Component {
     }
     async componentDidMount(){
         const data = await axios.get("/personalized?limit=6")
- 
         this.setState({
             recommendList:data.result
         })

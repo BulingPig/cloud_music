@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import router from '../../../router'
 
 import {
-    BrowserRouter as Router,
-    Route,
     NavLink
   } from "react-router-dom"
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
-import router from '../index'
+import router from '../../index'
+import '../../../assets/iconfont/iconfont.css'
 export default class Nav extends Component {
     render() {
         return (
@@ -13,7 +14,7 @@ export default class Nav extends Component {
                                 <NavLink  className={v.iconfontName} to={v.to}></NavLink>
                                 <NavLink  className="link"  to={v.to}>
                                     <span style={{ marginLeft:"20px"}}>{v.context}</span>
-                                    <span style={{ marginRight:"20px"}}>{">"}</span>
+                                    <span className="iconfont icon-you"></span>
                                 </NavLink>
                             </p>
                             :null
