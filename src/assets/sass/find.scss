@@ -1,0 +1,106 @@
+@import './mixin.scss';
+
+#find{
+    .top_search{
+        position: fixed;
+        top: px2rem(0px);
+        display: flex;
+        height: px2rem(45px);
+        width: 100%;
+        color: #fff;
+        background: #da3f3b;
+        justify-content: space-around;
+        align-items: center;
+        .icon-cloud{
+            margin-left: px2rem(15px)
+        };
+        .icon-jiezou{
+            margin-right: px2rem(15px)
+        };
+        .top_search_int{
+            width: 70%;
+            height: px2rem(30px);
+            background: #CB564A;
+            outline: none;
+            border: 1px solid #CB564A;
+            border-radius: 20PX;
+            line-height: px2rem(30px);      
+        };
+    }
+    .wrapper{
+        margin-top: px2rem(45px);
+        width: px2rem(375px);
+        background: #fcc;
+        .content{
+            li{
+                justify-content: left;
+                border: 2px solid blue;
+                img{              
+                 width: 100%;
+                }
+            }
+            
+        }
+    }
+    .tab_card{
+        height: px2rem(60px);
+        width: 100%;
+        background: cornflowerblue;
+        ul{
+            display: flex;
+            justify-content: space-around;
+            font-size: px2rem(12px);       
+            li{
+                width: px2rem(50px);
+                height: px2rem(50px);
+                background: #fcc;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;             
+                .iconfont{
+                    height: px2rem(40px);
+                    width: px2rem(40px);
+                    border:1px solid #ecebe9;
+                    // margin-left: px2rem(-2px);
+                    border-radius: 50%;
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: space-around;
+                    // text-decoration: none;
+                }
+            }
+        }
+    }
+    .song_list,.new_pan{
+        margin-bottom: px2rem(30px);
+        ul{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            li{
+                border: 1px solid red;
+                width: px2rem(100px);
+                height: px2rem(100px);
+                margin-bottom: px2rem(40px);
+                img{
+                    width: 100%;
+                }
+            }
+        }     
+    }
+    .selected{
+        ul{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            li{
+                border: 1px solid red;
+                width: 100%;
+                margin-bottom: px2rem(40px);
+                img{
+                    width: 100%;
+                }
+            }
+        }     
+    }
+}
