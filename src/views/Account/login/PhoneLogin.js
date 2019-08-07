@@ -1,6 +1,6 @@
 import React from 'react';
-import "../../assets/sass/account.scss"
-import "../../assets/iconfont-account1/iconfont.css"
+import "../../../assets/sass/account.scss"
+import "../../../assets/iconfont-account1/iconfont.css"
 import axios from 'axios';
 export default class PhoneLogin extends React.Component{
     constructor(props){

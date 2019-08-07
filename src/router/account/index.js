@@ -11,11 +11,18 @@ import Mine from "../../views/Account/Mine"
 import Inform from "../../views/Account/Inform"
 import PersonalLetter from "../../views/Account/PersonalLetter"
 //登录
-import Login from "../../views/Account/Login"
-import PhoneLogin from "../../views/Account/PhoneLogin"
-import Verification from "../../views/Account/Verification"
-import PassWord from "../../views/Account/PassWord"
-import Register from "../../views/Account/Register"
+import Login from "../../views/Account/login/Login"
+import PhoneLogin from "../../views/Account/login/PhoneLogin"
+import Verification from "../../views/Account/login/Verification"
+import PassWord from "../../views/Account/login/PassWord"
+import Register from "../../views/Account/login/Register"
+/**
+ * *************************登录以后的动态。关注、粉丝、编辑资料***************************
+ */
+import Attention from "../../views/Account/mynav/Attention"
+import Data from "../../views/Account/mynav/Data"
+import Fans from "../../views/Account/mynav/Fans"
+import State from "../../views/Account/mynav/State"
 const routers=[
     //账户内的消息、商城、演出、个性皮肤 
     {
@@ -124,6 +131,35 @@ const routers=[
         path:"/account/Register",
         context:"注册信息",
         component:Register,
+        type:3,
+    },
+    //登录后的动态关注粉丝编辑资料
+    {
+        to:"/account/attention",
+        path:"/account/attention",
+        context:"关注",
+        component:Attention,
+        type:3,
+    },
+    {
+        to:"/account/state",
+        path:"/account/state",
+        context:"动态",
+        component:State,
+        type:3,
+    },
+    {
+        to:"/account/fans",
+        path:"/account/fans",
+        context:"粉丝",
+        component:Fans,
+        type:3,
+    },
+    {
+        to:"/account/data",
+        path:"/account/data",
+        context:"编辑资料",
+        component:Data,
         type:3,
     },
 ]

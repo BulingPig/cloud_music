@@ -46,20 +46,6 @@ export default class Verification extends React.Component{
                     })
                 }
     }
-   
-    onclickTo(){
-       
-        // if(this.refs.phoneNumber.value ===localStorage.passWord){
-        //      this.props.history.push("/")
-        // }else{
-        //     this.refs.reminder.style.display = "block";
-        //      this.refs.phoneNumber.value = "";
-        //      setTimeout(()=>{
-        //         this.refs.reminder.style.display = "none";
-        //      },1500)
-        // }
-       
-    }
     componentDidMount(){
         // console.log(localStorage.phone)
         let phone = localStorage.phone;
