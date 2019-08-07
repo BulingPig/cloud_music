@@ -1,10 +1,11 @@
-import Find from '../views/Find/index'
+﻿import Find from '../views/Find/index'
 import My from '../views/My'
 import Video from '../views/Video'
 import Friend from '../views/Friend'
 import Account from '../views/Account'
 import accountRouters from "./account"
-import my_router from './my'
+import my_router from "./my"
+import findRouterList from "./Find"
 
 
 const routers = [
@@ -75,6 +76,7 @@ const routers = [
     },
     ...accountRouters,
     ...my_router,
+    ...findRouterList,
 ]
 
 export default {
