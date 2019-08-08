@@ -18,8 +18,8 @@ export default class Information extends React.Component{
                         router.routers.map((v,i)=>{
                             return(
                                 v.type === 4?
-                                <div key={i} style={{float:"left"}}>
-                                    <NavLink className="everyone" style={{background:"#fff"}} activeStyle={{background:"red"}} to={v.to}>{v.context}</NavLink>
+                                <div key={i} style={{float:"left"}} className="everyone">
+                                    <NavLink to={v.to}>{v.context}</NavLink>
                                 </div>:null
                             )
                         })

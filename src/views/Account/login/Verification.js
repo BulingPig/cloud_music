@@ -31,7 +31,7 @@ export default class Verification extends React.Component{
 
 
                 <div className="popBox" ref="reminder">
-                        您输入的密码错误
+                        您输入的验证码错误
                   </div>
             </div>
         )
@@ -39,10 +39,10 @@ export default class Verification extends React.Component{
     changeNumber(){
         let phone = localStorage.phone;
          if(this.refs.number.value.length === 4){
-                    console.log(11111111111111)
+                    // console.log(11111111111111)
                     axios.get("/captcha/verify?phone="+phone+"&captcha="+this.refs.number.value)
                     .then(data=>{
-                        this.props.history.push("/account/Register")
+                        this.props.history.push("/")
                     })
                 }
     }

@@ -9,6 +9,12 @@ export default class Data extends React.Component{
                 <span>我的资料</span>
                 <span className="iconfont icon-jiezou"></span>
                 </div>
+                {/* 我的资料列表 */}
+                <div>
+                    <p>头像</p>
+                    <img className="dataImg" src={localStorage.pic} alt=""/>
+                    <span className="iconfont icon-you"></span>
+                </div>
             </div>
         )
     }

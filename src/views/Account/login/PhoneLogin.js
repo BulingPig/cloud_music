@@ -67,7 +67,13 @@ export default class PhoneLogin extends React.Component{
             if(data.exist!==-1){//如果注册，就跳转到登录
                 this.props.history.push("/account/PassWord")
             }else{//如果没有注册就跳转到注册
-                this.props.history.push("/account/Verification")
+                this.props.history.push({
+                    pathname:"/account/Verification",
+                    state:{
+                        phone:this.state.value
+                    }
+
+                })
                 localStorage.phone = phoneNumber
             }
         })

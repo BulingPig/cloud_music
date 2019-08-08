@@ -21,7 +21,7 @@ export default class Fans extends React.Component{
                 {
                    this.state.fansList.map((v,i)=>{
                        return(
-                           <div key={i} className="attentionList">
+                           <div key={i} className="attentionList"  onClick={()=>{this.props.history.push("/account/HeadPhoto")}}>
                                 <img className="attentionImg" src={v.avatarUrl} alt=""/>
                                 <span className="fansName">{v.nickname}</span>
                             </div>
@@ -44,7 +44,7 @@ export default class Fans extends React.Component{
             this.setState({
                 fansList:data.followeds
             })
-            console.log(data)
+            // console.log(data)
             if(data.followeds.length ===0){
                 this.refs.nofans.style.display = "block";
             }else{
