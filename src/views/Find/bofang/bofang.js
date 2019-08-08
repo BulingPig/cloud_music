@@ -1,5 +1,5 @@
-import React from "React";
-import Axios from "axios";
+import React from 'react'
+import axios from 'axios'
 class Live extends React.Component {
     constructor() {
         super()
@@ -29,7 +29,7 @@ class Live extends React.Component {
         )
     }
     async  componentDidMount() {
-        const  data  = await Axios.get("/lyric?id=" + this.props.match.params.songid)
+        const  data  = await axios.get("/lyric?id=" + this.props.match.params.songid)
         this.setState({
             lrc: data.lrc.lyric.split("[")
         })

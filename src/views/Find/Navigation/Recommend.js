@@ -1,5 +1,5 @@
-import React from "React";
-import Axios from "axios";
+import React from 'react'
+import axios from 'axios'
 import {
     BrowserRouter as router,
     Link,
@@ -24,7 +24,7 @@ class Recommend extends React.Component {
         )
     }
     async  componentDidMount() {
-        const  data  = await Axios.get("playlist/detail?id=28769028")
+        const  data  = await axios.get("playlist/detail?id=28769028")
         this.setState({
             shitiaoyinyue:data.playlist.tracks
         })

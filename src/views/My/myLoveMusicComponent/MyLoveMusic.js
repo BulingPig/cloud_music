@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
 import '../../../assets/iconfont/iconfont.css'
-import { NavLink } from "react-router-dom";
+import axios from 'axios'
+
 export default class myLoveMusic extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state ={
             isShow:true,
-            songList:[
-                {
-                    name:"我喜欢的音乐",
-                    allNum:0,
-                    downloadNum:0,
-                }
-            ]
+            songList:[]
         }
     }
     show(isShow) {
@@ -92,16 +87,17 @@ export default class myLoveMusic extends Component {
                 {
                     this.state.songList.map((v,i)=>{
                         return(
-                            <div key={i} className="listWrap">
-                                <div className="heart"><b className="iconfont icon-xin"></b></div>
-                                <div id="love">
-                                    <div className="love">{v.name}</div>
-                                    <div id="songNum"> 
-                                        <b className="iconfont icon-wodeshoucang"></b>
-                                        <b>共{v.allNum}首</b>
-                                    </div> 
+                                <div key={i}  className="listWrap" onClick={()=>{this.props.history.push("/my/SongListDetail/"+v.songListId)}}>
+                                    <div className="heart"><b className="iconfont icon-xin"></b></div>
+                                    <div id="love">
+                                        <div className="love">{v.name}</div>
+                                        <div id="songNum"> 
+                                            <b className="iconfont icon-wodeshoucang"></b>
+                                            <b>共{v.allNum}首</b>
+                                        </div> 
+                                    </div>
                                 </div>
-                            </div>
+                            
                         )
                     })
                 }
@@ -120,6 +116,19 @@ export default class myLoveMusic extends Component {
             </div>
         )
     }
-   
+   async componentDidMount(){
+    const data = await axios.get("/user/playlist?uid="+localStorage.id)
+    var arr = this.state.songList;
+    for(var i=0; i<data.playlist.length; i++){
+        arr.push({
+            name:data.playlist[i].name,
+            allNum:data.playlist[i].trackCount,
+            songListId:data.playlist[i].id,
+        })
+    }
+    this.setState({
+        songList:arr
+    })
+   }
 
 }

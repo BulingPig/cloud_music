@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 class RadioStation extends React.Component {
     render() {
         return (

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {
-    NavLink,
+    withRouter
 } from 'react-router-dom'
 
-export default class Recommend extends Component {
+class Recommend extends Component {
     constructor(){
         super();
         this.state = {
@@ -12,7 +12,7 @@ export default class Recommend extends Component {
         }
     }
     render() {
-        console.log(this.state.recommendList)
+        
         return (
             <div id="recommend">
                 <p>
@@ -25,7 +25,7 @@ export default class Recommend extends Component {
                     {
                         this.state.recommendList.map((v,i)=>{
                             return(
-                                <div key={i} className="wrapLoop">
+                                <div key={i} className="wrapLoop" onClick={()=>{this.props.history.push("/my/SongListDetail/"+this.state.recommendList[i].id)}}>
                                     <p className="pic"><img className="imges" src={v.picUrl} alt=""/></p>
                                     <p className="text">{v.name}</p>
                                 </div>
@@ -43,3 +43,4 @@ export default class Recommend extends Component {
         })
     }
 }
+export default withRouter(Recommend);

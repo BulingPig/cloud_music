@@ -7,6 +7,7 @@ import PersonCollection from '../../../views/My/tabComponents/PersonCollection'
 import PersonFM from '../../../views/My/tabComponents/PersonFM'
 import Run from '../../../views/My/tabComponents/Run'
 import StatiSpace from '../../../views/My/tabComponents/StatiSpace'
+import SongListDetail from '../../../components/songListDetail/SongListDetail'
 
 const routers = [
     {
@@ -115,6 +116,17 @@ const routers = [
         component:StatiSpace,
         meta:{
             title:"轮播"
+        }
+    },
+    {
+        to:"/my/SongListDetail",
+        type:"SongListDetail",
+        exact:true,
+        path:"/my/SongListDetail/:id",
+        context:"歌单详情",
+        component:SongListDetail,
+        meta:{
+            title:"歌单详情"
         }
     },
 ]

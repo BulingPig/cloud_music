@@ -1,4 +1,4 @@
-import BoFang from "../../views/Find/bofang/bofang"
+import BoFang from "../../views/Find/Bofang/bofang"
 import Recommend from "../../views/Find/Navigation/Recommend"
 import SongList from "../../views/Find/Navigation/SongList"
 import Rank from "../../views/Find/Navigation/Rank"

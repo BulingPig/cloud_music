@@ -229,7 +229,7 @@
                 }
             }
             input{
-                background: rgb(248, 248, 248);
+                background-color:#102c38;
                 border-radius: px2rem(6px);
                 height: px2rem(25px);
                 outline: none;
@@ -239,5 +239,194 @@
             }
         }
     }
-    
+}
+#songListDetail{
+    .wrap{
+        height: px2rem(325px);
+    }
+    overflow: hidden;
+    .middle{
+        position: absolute;
+        top: px2rem(45px);
+        .top{
+            z-index: 100;
+            width: 100%;
+            height: px2rem(45px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            color: #000;
+            background: #fdfdfd;
+            .left{
+                margin-left: px2rem(15px);
+            }
+            .iconfont{
+                margin-right: px2rem(15px);
+            }
+        }
+       .songListTitle{
+           margin-top: px2rem(15px);
+           width: px2rem(375px);
+           input{
+               outline: none;
+                width: 80%;
+               border: none;
+               height: px2rem(30px);
+               color: #fff;
+               border-radius: px2rem(15px);
+               background: rgba(211, 209, 209, 0.281);
+           }
+           .songListPic{
+               position: relative;
+               margin-top: px2rem(30px);
+               margin-left: px2rem(20px);
+               height: px2rem(125px);
+               
+               .songListBg{
+                   float: left;
+                   position: relative;
+                   height: px2rem(125px);
+                   width: px2rem(125px);
+                   img{
+                       height: 100%;
+                       width: 100%;
+                   }
+                   .iconfont{
+                       color: #fff;
+                       position: absolute;
+                       top: px2rem(5px);
+                       right: px2rem(5px);
+                       font-size: px2rem(12px);
+                   }
+               }
+               //********************************
+               //********************************
+               //********************************
+               //********************************
+               .songListName{
+
+                   margin-left: px2rem(35px);
+                   text-align: left;
+                   
+
+                    color:#fff;
+                    margin-bottom: px2rem(15px);
+                    font-size: px2rem(15px);
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                     -webkit-line-clamp: 1;
+                     overflow: hidden;
+                     
+               }
+               .authorHeadPicUrl{
+                   display: inline-block;
+                   position: absolute;
+                   top: px2rem(35px);
+                   left: px2rem(155px);
+                   margin-right: px2rem(10px);
+                   height: px2rem(30px);
+                   width: px2rem(30px);
+                   img{
+                        border-radius: 50%;
+                        height: 100%;
+                        width: 100%;
+                   }
+               }
+               .authorName{
+                   display: block;
+                   position: absolute;
+                   top: px2rem(43px);
+                   left: px2rem(195px);
+                   float: left;
+                    font-size: px2rem(13px);
+                    color: #fff;
+                   
+               }
+           }
+       }
+    }
+    #playAll{
+        height: px2rem(45px);
+        width: 100%;
+        background:#88aebe;
+       .wrap{
+           text-align: left;
+           background: #fff;
+           height: 100%;
+           width: 100%;
+           position: relative;
+           border-radius: px2rem(20px) px2rem(20px) 0 0;
+           .iconfont{
+                display: inline-block;
+                margin-left: px2rem(20px);
+                margin-right: px2rem(5px);
+                color: #000;
+                font-size: px2rem(20px);
+                font-weight: bold;
+                margin-top: px2rem(10px);
+           }
+           .allNum{
+                display: inline-block;
+                font-weight: bold;
+                position: absolute;
+                z-index: 50;
+                background: rgb(255, 255, 255);
+                top: px2rem(11px);left: px2rem(50px);
+                span{
+                    display: inline-block;
+                    font-size: px2rem(12px);
+                    color: #ababab;
+                }
+           }
+       }
+    }
+    .songList{
+        z-index: -10;
+        .loopSongList{
+            height: px2rem(50px);
+            width: 100%;
+            position: relative;
+            .order{
+                display: inline-block;
+                position: absolute;
+                left: px2rem(15px);
+                top: px2rem(13px);
+                color: #999;
+                font-size: px2rem(16px);
+            }
+            .songMsg{
+                .songName{
+                    position: absolute;
+                    top: px2rem(5px);
+                    left: px2rem(40px);
+                    font-size: px2rem(14px);
+                    color: #3c3c3c;
+                }
+                .songAuthorName{
+                    position: absolute;
+                    top: px2rem(27px);
+                    left: px2rem(40px);
+                    font-size: px2rem(12px);
+                    color: #979797;
+                }
+            }
+            .icon-zhongxinshipin{
+                position: absolute;
+                top: px2rem(13px);
+                right: px2rem(50px);
+                color: #979797;
+                font-size: px2rem(24px);
+            }
+            .icon-gengduo{
+                position: absolute;
+                top: px2rem(15px);
+                right: px2rem(18px);
+                color: #979797;
+                font-size: px2rem(20px);
+            }
+        }
+    }
+
 }
