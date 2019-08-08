@@ -2,6 +2,7 @@
 
 #my{ 
         .my_top{
+        
         position: fixed;
         top: px2rem(0px);
         display: flex;
@@ -11,6 +12,7 @@
         background: #da3f3b;
         justify-content: space-between;
         align-items: center;
+        z-index: 2;
         .icon-cloud{
             margin-left: px2rem(15px)
         }
@@ -18,10 +20,43 @@
             margin-right: px2rem(15px)
         }
     }//****************未完成的轮播************************
-    .my_tab{
+    #my_tab{
         margin-top: px2rem(45px);
         height: px2rem(92px);
         border-bottom: px2rem(2px) solid #fbfbfb;
+        .swiper-container{
+            
+            .swiper-wrapper{
+                
+                .swiper-slide{
+                    .wrap{
+                        margin-left: px2rem(8px);
+                        margin-top: px2rem(15px);
+                        display: flex;
+                        height: px2rem(35px);
+                        width: px2rem(35px);
+                        border: 1px solid #da3f3b;
+                        background: #da3f3b;
+                        border-radius: 50%;
+                        justify-content: center;
+                        align-items: center;
+                        .iconfont{
+                            color: #fff;
+                            display: block;
+                            font-size: px2rem(24px);
+                        }
+                    }
+                    .text{
+                        text-align: center;
+                        font-size: px2rem(13px);
+                    }
+                    padding: 0 px2rem(20px);
+                    width: auto;
+                    padding: px2rem(0px) px2rem(20px);
+                    color:red;
+                }
+            }
+        }
     }
     
     #my_midddleRouter{
@@ -39,6 +74,13 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #e3e3e3;
+            p{
+                margin-right: px2rem(20px);
+            }
+            .icon-you{
+                margin-right: px2rem(20px);
+                font-size: px2rem(15px);
+            }
         }
         .iconfont{
             display: flex;
@@ -68,60 +110,61 @@
         }
         
     }
-    #songList{
-        .heart{
-            margin-left: px2rem(15px);
-            display:block;
-            float: left;
-            height: px2rem(45px);
-            width: px2rem(45px);
-            border-radius: px2rem(4px);
-            background: #da3f3b;
-            margin-right: px2rem(5px);
-            .icon-xin{
+    #mySongList{
+        
+        .listWrap{
+            text-align: left;
+            .heart{
                 display: inline-block;
-                margin-top: px2rem(4px);
-                color: #fff;
-                font-size: px2rem(35px);
-                margin-left: px2rem(5px);
+                margin-left: px2rem(15px);
+                height: px2rem(45px);
+                width: px2rem(45px);
+                border-radius: px2rem(4px);
+                background: #da3f3b;
+                margin-right: px2rem(5px);
+                .icon-xin{
+                    display: inline-block;
+                    margin-top: px2rem(4px);
+                    color: #fff;
+                    font-size: px2rem(35px);
+                }
             }
-        }
-        #love{
-            display: block;
-            padding-top: px2rem(15px);
-            .love{
-                
-                display: block;
-                text-align: left;
-                font-size: px2rem(12px);
-            }
-            #songNum{ 
-                display: block;
-                text-align: left;
-                font-size: px2rem(10px);
-                .icon-wodeshoucang{
+            #love{
+                display: inline-block;
+                padding-top: px2rem(15px);
+                .love{
+                    display: inline-block;
+                    text-align: left;
+                    font-size: px2rem(14px);
+                }
+                #songNum{
+                    text-align: left;
                     font-size: px2rem(10px);
-                    color: #da3f3b;
+                    .icon-wodeshoucang{
+                        font-size: px2rem(10px);
+                        color: #da3f3b;
+                    }
                 }
             }
         }
     }
     #recommend{
+        p{text-align: left;}
         width: px2rem(350px);
         margin-top: px2rem(10px);
         margin-left: px2rem(15px);
-        margin-right: px2rem(15px);
+        
         #heart{
             display: inline-block;
             height: px2rem(20px);
             width: px2rem(20px);
             border-radius: 50%;
             background: #da3f3b;
-            margin-right: px2rem(5px);
+            margin-right: px2rem(7px);
             .icon-xin{
                 display: inline-block;
                 color:#fff;
-                margin-left: px2rem(4px);
+                margin-left: px2rem(1px);
                 font-size: px2rem(12px);
             }
         }
@@ -149,13 +192,52 @@
                    width: px2rem(105px);
                    height: px2rem(30px);
                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
+                   -webkit-box-orient: vertical;
                     -webkit-line-clamp: 2;
                     overflow: hidden;
                }
            }
        }
     
+    }
+    #addSongList{
+        height: 100%;
+        background-color: rgba(90, 87, 87, 0.1);
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 2;
+        .mask{
+            height: 60%;
+            background-color: rgba(90, 87, 87, 0.1);
+        }
+        .main{
+            background: #000;
+            height: 40%;
+            width: 100%;
+            background: #fff;
+            border-radius: px2rem(20px) px2rem(20px) 0 0;
+            .top{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 px2rem(15px);
+                padding-top: px2rem(10px);
+                margin-bottom: px2rem(10px);
+                .did{
+                    color: #e5e5e5;
+                }
+            }
+            input{
+                background: rgb(248, 248, 248);
+                border-radius: px2rem(6px);
+                height: px2rem(25px);
+                outline: none;
+                width: 92%;
+                text-align: left;
+                border: none;
+            }
+        }
     }
     
 }
