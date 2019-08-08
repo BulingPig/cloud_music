@@ -18,24 +18,29 @@ export default class Register extends React.Component{
             <div>
                 {/* 头部 */}
                 <div className="account-header">
-                <p className="login-back iconfont icon-fanhui" onClick={()=>{this.props.history.push("/account/Verification")}}></p>
+                <p className="login-back iconfont icon-fanhui" onClick={()=>{this.props.history.push("/account/PassWord")}}></p>
                 <span>注册信息</span>
                 <span></span>
                 </div>
+
+
                 <div>
-                <input type="text" ref="phone" placeholder="手机号码" onChange={()=>{this.changephone()}}/>
+                    手机号：
+                <input  className="newPassWord" type="text" ref="phone" placeholder="手机号码" onChange={()=>{this.changephone()}}/>
                 </div>
                 <div>
-                <input type="text" ref="password" placeholder="密码" onChange={()=>{this.changepassword()}}/>
+                    密码为：
+                <input className="newPassWord" type="text" ref="password" placeholder="密码" onChange={()=>{this.changepassword()}}/>
                 </div>
                 <div>
-                <input type="text" ref="nickname" placeholder="昵称" onChange={()=>{this.changenickname()}}/>
+                    昵称为：
+                <input className="newPassWord" type="text" ref="nickname" placeholder="昵称" onChange={()=>{this.changenickname()}}/>
                 </div>
                 <div>
-                <input type="text" ref="captcha" placeholder="验证码" onChange={()=>{this.changecaptch()}}/>
-                <input type="button" value="获取验证码" onClick={()=>{this.getcaptch()}}/>
+                <input className="getNum" type="text" ref="captcha" placeholder="验证码" onChange={()=>{this.changecaptch()}}/>
+                <input className="getNumBtn" type="button" value="获取验证码" onClick={()=>{this.getcaptch()}}/>
                 </div>
-                <input type="button" value="注册" onClick={()=>{this.register()}}/>
+                <input className="newRegister" type="button" value="注册" onClick={()=>{this.register()}}/>
             </div>
         )
     }
@@ -66,8 +71,8 @@ export default class Register extends React.Component{
         
         axios.get("/register/cellphone?phone="+phone+"&password="+password+"&captcha="+captcha+"&nickname="+nickname)
         .then(data=>{
-            // localStorage.phone = phone;
-            this.props.history.push("/")
+            localStorage.phone = phone;
+            this.props.history.push("/account/password")
         })
         
     }

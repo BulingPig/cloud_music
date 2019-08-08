@@ -3,30 +3,66 @@ import "../../assets/iconfont/iconfont.css"
 import "../../assets/iconfont-account1/iconfont.css"
 import "../../assets/sass/account.scss"
 import router from "../../router"
+import axios from "axios"
 
 import {
     NavLink,
 } from "react-router-dom"
 
 export default class Account extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            attentionNum:[],
+            fansList:[],
+            stateList:[],
+            detail:{}
+        }
+    }
     render() {
         return (
             <div>
                 {/* 头部 */}
-                <div className="account-header">
+                <div className="account-header" style={{position:"fixed",zIndex:"100"}}>
                 <span className="iconfont icon-saoyisao"></span>
                 <span>账号</span>
                 <span className="iconfont icon-jiezou"></span>
                 </div>
+                {/* 登录之后 */}
+                <div ref="afterlogin" className="myInfromation">
+                    <div>
+                        <img onClick={()=>{this.props.history.push("/account/HeadPhoto")}} className="userPhoto" src={localStorage.pic} alt=""/>
+                        <span className="myName">{this.state.detail.nickname}</span>
+                        <div className="myLv">Lv.0</div>
+                        <div className="signin" ref="signin" onClick={()=>this.signin()}>签到</div>
+                    </div>
+                   <div className="huashuoNav">
+                       <div onClick={()=>{this.props.history.push("/account/State")}}>
+                           <p>{this.state.stateList.length}</p>
+                           <p>动态</p>
+                       </div>
+                       <div onClick={()=>{this.props.history.push("/account/Attention")}}>
+                           <p>{this.state.attentionNum.length}</p>
+                           <p>关注</p>
+                       </div>
+                       <div onClick={()=>{this.props.history.push("/account/Fans")}}>
+                           <p>{this.state.fansList.length}</p>
+                           <p>粉丝</p>
+                       </div>
+                       <div onClick={()=>{this.props.history.push("/account/Data")}}>
+                           <p className="iconfont icon-huo"></p>
+                           <p>编辑资料</p>
+                       </div>
+                   </div>
+                </div>
                 {/* 登录附近 */}
-                <div className="account-button">
-                    <p>登录网易云音乐</p>
+                <div className="account-button" ref="beforelogin">
+                    <p ref="something">登录网易云音乐</p>
                     <p>手机电脑多端同步，尽享海量高品质音乐</p>
-                    <input type="button" value="立即登录" onClick={()=>{this.props.history.push("/account/login")}}/>
-
+                    <input type="button" value="立即登录" onClick={()=>{this.props.history.push({pathname:"/account/login"})}}/>
                 </div>
                 {/* VIP */}
-                <div className="account-vip">
+                <div ref="vip" className="account-vip">
                         <p className="vip">开通黑胶VIP</p>
                         <p className="newfive">新客仅5元</p>
                         <span className="forfree">免费领福利</span>
@@ -51,7 +87,7 @@ export default class Account extends Component {
                     }
                    
                 </div>
-                {/* 列表 */}
+                {/*  列表 */}
                 <div className="account-list">
                     {/* 我的铃声 */}
                     <div className="account-list-dingdan">
@@ -140,12 +176,71 @@ export default class Account extends Component {
                             <p className="account-list-right-left">关于</p>
                             <p className="iconfont icon-you account-list-right-right"></p>
                         </div>
-                    </div>
+                    </div> 
+                </div>
+                {/* 退出登录 */}
+                <div>
+                    <div className="account-list-dingdan" ref="exit">
+                        <div>
+                            <input className="account-list-exit"
+                             onClick={()=>{this.onClickExit()}} type="button" value="退出登录"/>
+                        </div>     
+                    </div> 
                 </div>
             </div>
         )
     }
+    signin(){
+        this.refs.signin.style.background="#fff";
+        this.refs.signin.style.color="#000";
+    }
+    onClickExit(){
+        axios.get("/logout")
+        .then(data=>{
+            // console.log(data);
+            localStorage.clear();
+            this.props.history.push("/account/login");
+        })
+    }
     componentDidMount(){
         document.title = this.props.meta.title;
+        if(localStorage.id){
+            this.refs.beforelogin.style.display="none";
+            this.refs.afterlogin.style.display="block";
+            this.refs.exit.style.display="block";
+            this.refs.vip.style.marginTop="80px"
+        }else{
+            this.refs.beforelogin.style.display="block";
+            this.refs.something.style.paddingTop="70px";
+            this.refs.afterlogin.style.display="none";
+            this.refs.exit.style.display="none";
+        }
+        axios.get("/user/follows?uid="+localStorage.id)
+        .then(data=>{
+            this.setState({
+                attentionNum:data.follow
+            })
+        })
+        axios.get("/user/followeds?uid="+localStorage.id)
+        .then(data=>{
+            this.setState({
+                fansList:data.followeds
+            })
+        })
+        axios.get("/user/event?uid="+localStorage.id)
+        .then(data=>{
+            // console.log(data.events.length)
+            this.setState({
+                stateList:data.events
+            })
+        })
+        axios.get("/user/detail?uid="+localStorage.id)
+        .then(data=>{
+            // console.log("用户详情",data.profile)
+            this.setState({
+                detail:data.profile
+            })
+        })
+
     }
 }

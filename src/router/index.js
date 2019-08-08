@@ -4,10 +4,12 @@ import Video from '../views/Video'
 import Friend from '../views/Friend'
 import Account from '../views/Account'
 import accountRouters from "./account"
-import my_router from "./my"
+import my_middleRouter from './my/middlerouters'
+import my_tabRouter from './my/tabComponents'
 import findRouterList from "./Find"
 //评论
 import SongReviews from './../components/SongReviews/SongReviews'
+
 
 const routers = [
     {
@@ -89,8 +91,10 @@ const routers = [
         }
     },
     ...accountRouters,
-    ...my_router,
+    ...my_middleRouter,
+    ...my_tabRouter,
     ...findRouterList,
+
 ]
 
 export default {

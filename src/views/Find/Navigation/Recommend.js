@@ -13,19 +13,19 @@ class Recommend extends React.Component {
     render() {
         return (
             <div>
-                推荐  
+                推荐
                 {
                     this.state.tenMuisc.map((v, i) => {
-                        return  <p key={i}> <Link  to={'/bofang/'+v.id} >{v.ar[0].name}---{v.name}</Link></p>
+                        return <p key={i}> <Link to={'/bofang/' + v.id} >{v.ar[0].name}---{v.name}</Link></p>
                     })
                 }
             </div>
         )
     }
     async  componentDidMount() {
-        const  data  = await axios.get("playlist/detail?id=28769028")
+        const data = await axios.get("playlist/detail?id=28769028")
         this.setState({
-            tenMuisc:data.playlist.tracks
+            tenMuisc: data.playlist.tracks
         })
     }
 }

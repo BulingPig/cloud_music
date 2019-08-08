@@ -11,11 +11,28 @@ import Mine from "../../views/Account/Mine"
 import Inform from "../../views/Account/Inform"
 import PersonalLetter from "../../views/Account/PersonalLetter"
 //登录
-import Login from "../../views/Account/Login"
-import PhoneLogin from "../../views/Account/PhoneLogin"
-import Verification from "../../views/Account/Verification"
-import PassWord from "../../views/Account/PassWord"
-import Register from "../../views/Account/Register"
+import Login from "../../views/Account/login/Login"
+import PhoneLogin from "../../views/Account/login/PhoneLogin"
+import Verification from "../../views/Account/login/Verification"
+import PassWord from "../../views/Account/login/PassWord"
+import Register from "../../views/Account/login/Register"
+/**
+ * *************************登录以后的动态。关注、粉丝、编辑资料***************************
+ */
+import Attention from "../../views/Account/mynav/Attention"
+import Data from "../../views/Account/mynav/Data"
+import Fans from "../../views/Account/mynav/Fans"
+import State from "../../views/Account/mynav/State"
+/**
+ * *************************点击头像的路由***************************
+ */
+import HeadPhoto from "../../views/Account/headPhoto/HeadPhoto"
+/**
+ * *************************点击头像里面音乐、动态、关于我的路由***************************
+ */
+import PhotoMusic from "../../views/Account/headPhoto/PhotoMusic"
+import PhotoState from "../../views/Account/headPhoto/PhotoState"
+import PhotoMy from "../../views/Account/headPhoto/PhotoMy"
 const routers=[
     //账户内的消息、商城、演出、个性皮肤 
     {
@@ -23,7 +40,7 @@ const routers=[
         path:"/account/information",
         context:"消息",
         component:Information,
-        isShow:true,
+        isShow:false,
         type:2,
         iconfontName:"iconfont icon-xinfeng"
     },
@@ -61,8 +78,9 @@ const routers=[
         to:"/account/information/personalletter",
         path:"/account/information/personalletter",
         context:"私信",
+        exact:true,
         component:PersonalLetter,
-        isShow:true,
+        isShow:false,
         type:4,
     },
     {
@@ -70,7 +88,7 @@ const routers=[
         path:"/account/information/discuss",
         context:"评论",
         component:Discuss,
-        isShow:true,
+        isShow:false,
         type:4,
     },
     {
@@ -78,7 +96,7 @@ const routers=[
         path:"/account/information/mine",
         context:"@我",
         component:Mine,
-        isShow:true,
+        isShow:false,
         type:4,
     },
     {
@@ -86,7 +104,7 @@ const routers=[
         path:"/account/information/inform",
         context:"通知",
         component:Inform,
-        isShow:true,
+        isShow:false,
         type:4,
     },
 
@@ -126,6 +144,74 @@ const routers=[
         component:Register,
         type:3,
     },
+    //登录后的动态关注粉丝编辑资料
+    {
+        to:"/account/attention",
+        path:"/account/attention",
+        context:"关注",
+        component:Attention,
+        type:3,
+    },
+    {
+        to:"/account/state",
+        path:"/account/state",
+        context:"动态",
+        component:State,
+        type:3,
+    },
+    {
+        to:"/account/fans",
+        path:"/account/fans",
+        context:"粉丝",
+        component:Fans,
+        type:3,
+    },
+    {
+        to:"/account/data",
+        path:"/account/data",
+        context:"编辑资料",
+        component:Data,
+        type:3,
+    },
+    /**
+ * *************************点击头像的路由***************************
+ */
+{
+    to:"/account/headphoto",
+    path:"/account/headphoto",
+    context:"个人信息",
+    component:HeadPhoto,
+    type:3,
+    isShow:true
+},
+   /**
+ * *************************点击头像的音乐、动态、我的路由***************************
+ */
+{
+    to:"/account/headphoto/photomusic",
+    path:"/account/headphoto/photomusic",
+    context:"音乐",
+    component:PhotoMusic,
+    exact:true,
+    type:5,
+    isShow:true
+},
+{
+    to:"/account/headphoto/photostate",
+    path:"/account/headphoto/photostate",
+    context:"动态",
+    component:PhotoState,
+    type:5,
+    isShow:true
+},
+{
+    to:"/account/headphoto/photomy",
+    path:"/account/headphoto/photomy",
+    context:"关于我",
+    component:PhotoMy,
+    type:5,
+    isShow:true
+},
 ]
 
 export default  routers

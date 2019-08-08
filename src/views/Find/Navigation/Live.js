@@ -4,7 +4,7 @@ class Live extends React.Component{
         return (
             <div>
                 直播
-                </div>
+            </div>
         )
     }
 }
