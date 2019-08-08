@@ -35,7 +35,6 @@ export default class Attention extends React.Component{
     componentDidMount(){
         axios.get("/user/follows?uid="+localStorage.id)
         .then(data=>{
-            console.log(data)
             this.setState({
                 attention:data.follow
             })

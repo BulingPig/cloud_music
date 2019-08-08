@@ -1,7 +1,11 @@
 @import './mixin.scss';
+
 /*----------------------------账号头部-------------------------------*/
 *{
     text-align: center;
+}
+.icon-fanhui{
+    margin-left: px2rem(15px);
 }
 .account-header{
     .icon-saoyisao{
@@ -76,6 +80,36 @@
         background: #fff;
     }
 }
+/*------------------------------更改密码---------------------------------*/
+.newPassWord{
+    width: px2rem(180px);
+    height: px2rem(25px);
+    border: px2rem(1px) solid #ccc;
+    outline: none;
+    margin-top: px2rem(20px);
+}
+.getNum{
+    width: px2rem(150px);
+    height: px2rem(25px);
+    border: px2rem(1px) solid #ccc;
+    outline: none;
+    margin-top: px2rem(20px);
+}
+.getNumBtn{
+    background: #c00;
+    color: #fff;
+    border: none;
+    width: px2rem(80px);
+    height: px2rem(25px);
+}
+.newRegister{
+    background: red;
+    color: #fff;
+    border: none;
+    width: px2rem(250px);
+    height: px2rem(40px);
+    margin-top: px2rem(30px);
+}
 /*------------------------------关注列表---------------------------------*/
 .attentionList{
     .signature{
@@ -113,6 +147,159 @@
     font-size: px2rem(14px);
     line-height: px2rem(65px);
     margin-right: px2rem(80px);
+}
+/*----------------------------状态列表-------------------------------*/
+.stateList{
+    position: relative;
+    width: 100%;
+    height: px2rem(350px);
+    border-bottom: px2rem(1px) solid #ccc;
+    .statePhoto{
+        position: absolute;
+        top:px2rem(18px);
+        left:px2rem(14px);
+        width: px2rem(40px);
+        height: px2rem(40px);
+        border-radius: 50%;
+    }
+    .stateNickname{
+        position: absolute;
+        top:px2rem(23px);
+        left:px2rem(60px);
+        font-size: px2rem(12px);
+        color: #7e96a8;
+    }
+    .stateSong{
+        position: absolute;
+        top:px2rem(23px);
+        left:px2rem(125px);
+        font-size: px2rem(12px);
+        color: #949494  ;
+    }
+    .stateTime{
+        position: absolute;
+        top:px2rem(40px);
+        left:px2rem(60px);
+        font-size: px2rem(10px);
+        color: #cfcfcf  ;
+    }
+    .stateContext{
+        position: absolute;
+        top:px2rem(67px);
+        left:px2rem(60px);
+        font-size: px2rem(14px);
+    }
+    .stateGe{
+        position: absolute;
+        top:px2rem(267px);
+        left:px2rem(70px);
+        font-size: px2rem(16px);
+    }
+    .statePicture{
+        width: px2rem(205px);
+        height: px2rem(155px);
+        position: absolute;
+        top:px2rem(90px);
+        left:px2rem(60px);
+    }
+}
+/*----------------------------点击头像-------------------------------*/
+.photoBackgroud{
+    .photoBackgroud-photo{
+        width: px2rem(75px);
+        height: px2rem(75px);
+        border-radius: 50%;
+        position: absolute;
+        top: px2rem(20px);
+        left: px2rem(18px);
+    }
+    .photoBackgroud-name{
+        position: absolute;
+        top: px2rem(110px);
+        left: px2rem(20px);
+        font-size: px2rem(16px);
+        color: #fff;
+    }
+    .photoBackgroud-follows{
+        position: absolute;
+        top: px2rem(140px);
+        left: px2rem(20px);
+        font-size: px2rem(12px);
+        color: #e6e5e3;
+    }
+    .photoBackgroug-background{
+        width: px2rem(375px);
+        height: px2rem(250px);
+    }
+    .photoBackgroud-followeds{
+        position: absolute;
+        top: px2rem(140px);
+        left: px2rem(72px);
+        font-size: px2rem(12px);
+        color: #e6e5e3;
+    }
+    .photoBackgroud-bianji{
+        width: px2rem(70px);
+        height: px2rem(30px);
+        position: absolute;
+        top: px2rem(45px);
+        right: px2rem(15px);
+        font-size: px2rem(12px);
+        color: #000;
+        background: #fff;
+        opacity: 0.8;
+        line-height: px2rem(30px);
+        border-radius: px2rem(8px);
+    }
+    .photoBackgroud-vip{
+        width: px2rem(36px);
+        height: px2rem(16px);
+        position: absolute;
+        top: px2rem(165px);
+        left: px2rem(20px);
+        font-size: px2rem(10px);
+        color: #000;
+        background: #fff;
+        opacity: 0.8;
+        line-height: px2rem(16px);
+        border-radius: px2rem(15px);
+    }
+    .photoBackgroud-place{
+        width: px2rem(36px);
+        height: px2rem(16px);
+        position: absolute;
+        top: px2rem(165px);
+        left: px2rem(60px);
+        font-size: px2rem(10px);
+        color: #000;
+        background: #fff;
+        opacity: 0.7;
+        line-height: px2rem(16px);
+        border-radius: px2rem(15px);
+    }
+    width: 100%;
+    height: px2rem(250px);
+    background: #1a2d33;
+    position: relative;
+}
+.photoNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: px2rem(375px);
+    height: px2rem(50px);
+    font-size: px2rem(14px);
+    
+    p{
+        width: px2rem(124px)
+    }
+}
+.photoBackgroud-box{
+    border-radius: px2rem(20px);
+}
+
+.dataImg{
+    width: px2rem(375px);
 }
 /*----------------------------VIP-------------------------------*/
 .account-vip{
@@ -184,19 +371,18 @@
     width: px2rem(345px);
     height: px2rem(25px);
     border: px2rem(1px) solid #d73d33;
-    border-radius: px2rem(8px);
-    margin: px2rem(15px) 0 0 px2rem(15px);
+    border-radius: px2rem(12px);
+    margin: px2rem(15px) px2rem(0px) px2rem(0px) px2rem(15px);
     display: flex;
     justify-content: space-between;
     align-items: center;
    
-    // .everyone{
-    //     width: px2rem(87px);
-    //     height: 100%;
-    //     border-radius: px2rem(8px);
-    //     background: #d73d33;
-    //     font-size: px2rem(14px);
-    // }
+    .everyone{
+        width: px2rem(87px);
+        height: 100%;
+        border-radius: px2rem(12px);
+        font-size: px2rem(14px);
+    }
     
 }
 
@@ -237,6 +423,9 @@
     font-size: px2rem(16px);
     color: red;
     border:none;
+}
+.account-list-exit{
+    margin-bottom: px2rem(50px);
 }
 /*------------------------登录----------------------------------------*/
 .account-login{

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios"
-export default class State extends React.Component{
+export default class PhotoState extends React.Component{
     constructor(){
         super();
         this.state={
@@ -9,18 +9,8 @@ export default class State extends React.Component{
     }
     render(){
         return(
-            
             <div>
-                {/* 头部 */}
-                <div className="account-header">
-                <span className="iconfont icon-fanhui"  onClick={()=>{this.props.history.push("/account")}}></span>
-                <span>动态</span>
-                <span className="iconfont icon-jiezou"></span>
-                </div>
-                {/* 没有评论 */}
-                <div ref="haveno">暂无相关动态</div>
-                {/* 有评论的时候 */}
-                {
+                 {
                     this.state.stateList.map((v,i)=>{
                         return(
                             <div className="stateList" key={i}>
@@ -37,22 +27,13 @@ export default class State extends React.Component{
                         )
                     })
                 }
-                
             </div>
         )
     }
     componentDidMount(){
-        // var arr = this.state.stateList;
         axios.get("/user/event?uid="+localStorage.id)
         .then(data=>{
-            console.log(22,data.events)
-            
-            if(data.events.length===0){
-                this.refs.haveno.style.display="block"
-            }else{
-                this.refs.haveno.style.display="none"
-            }
-
+            // console.log(data.events.pic[)
             this.setState({
                 stateList:data.events
             })
