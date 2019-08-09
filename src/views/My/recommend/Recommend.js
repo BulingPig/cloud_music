@@ -35,7 +35,7 @@ export default class Recommend extends Component {
         )
     }
     async componentDidMount(){
-        const {data} = await axios.get("http://localhost:4000/personalized?limit=6")
+        const data = await axios.get("/personalized?limit=6")
  
         this.setState({
             recommendList:data.result

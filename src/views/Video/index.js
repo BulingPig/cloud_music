@@ -5,12 +5,12 @@ import List from './components/List'
 import '../../assets/iconfont/iconfont.css'
 import '../../assets/sass/video.scss'
 
-export default class Vidue extends Component {
+export default class Video extends Component {
     render() {
         return (
-            <div className="vidWrap">
-                <Navigation/>
-                <List/>
+            <div id="video">
+                <Navigation></Navigation>
+                <List></List>
             </div>
         )
     }
