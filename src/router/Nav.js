@@ -30,9 +30,7 @@ export default class Nav extends Component {
                                 <NavLink  className="nav" exact={v.exact}  to={v.to} style={{color:"#939391"}} activeStyle={{color:"#e5443a"}}>                                     
                                     {v.context}
                                 </NavLink>
-                                
-                            </div>
-                            :null
+                            </div>:null
                         )
                     })
                 }

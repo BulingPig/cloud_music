@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
 import '../../../assets/swiper/css/swiper.min.css'
 import swiper from 'swiper'
+import Nav from '../../../router/my/tabComponents/Nav'
 
 export default class TabComponent extends Component {
     render() {
         return (
-            <div className="my_tab">
+            <div id="my_tab">
                 <div className='swiper-container'>
-                    <div className='swiper-wrapper'>
-                        
-                    </div>
+                    <Nav></Nav>
                 </div>
             </div>
         )
     }
     componentDidMount(){
-        var mySwiper = new swiper('.swiper-container', {
-            freeMode:true,
+         new swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            freeMode : true,
+            freeModeMomentum : true,
          })
     }
 }

@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
+import {
+    withRouter
+} from "react-router-dom"
 
 class GuradRoute extends Component {
     render() {
-        //console.log(1111,this.props)
         return (
             <div>
                 <this.props.component {...this.props}/>
-                <Nav></Nav>
+                {
+                    this.props.isShow?<Nav></Nav>:null
+                }
             </div>
         )
     }
 }
 
-export default GuradRoute
+export default withRouter(GuradRoute)

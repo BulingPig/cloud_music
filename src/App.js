@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import router from './router'
 import {
   BrowserRouter as Router,
-  Route,
+  Route
 } from "react-router-dom"
 import GuradRoute from './router/GuradRoute'
 class App extends Component {

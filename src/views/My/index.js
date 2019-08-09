@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import TopComponent from './TopComponent'
 import TabComponent from './tabComponents/TabComponent'
 import MyLoveMusic from './myLoveMusicComponent/MyLoveMusic'
-import Nav from '../../router/my/Nav'
+import Nav from '../../router/my/middlerouters/Nav'
 import Recommend from './recommend/Recommend'
-export default class My extends Component {
+import { withRouter } from "react-router-dom";
+class My extends Component {
     render() {
         //console.log(this.props)
         return (
@@ -13,7 +14,7 @@ export default class My extends Component {
                     <TopComponent></TopComponent>
                     <TabComponent></TabComponent>
                     <Nav></Nav>
-                    <MyLoveMusic></MyLoveMusic>
+                    <MyLoveMusic {...this.props}></MyLoveMusic>
                     <Recommend></Recommend>
                 </div>
            
@@ -23,3 +24,4 @@ export default class My extends Component {
         document.title = this.props.meta.title;
     }
 }
+export default withRouter(My) 

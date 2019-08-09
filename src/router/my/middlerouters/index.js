@@ -1,7 +1,7 @@
-import LocalMusic from '../../views/My/middleComponents/LocalMusic'
-import LatelyPlay from '../../views/My/middleComponents/LatelyPlay'
-import MyRadioStation from '../../views/My/middleComponents/MyRadioStation'
-import MyCollection from '../../views/My/middleComponents/MyCollection'
+import LocalMusic from '../../../views/My/middleComponents/LocalMusic'
+import LatelyPlay from '../../../views/My/middleComponents/LatelyPlay'
+import MyRadioStation from '../../../views/My/middleComponents/MyRadioStation'
+import MyCollection from '../../../views/My/middleComponents/MyCollection'
 
 const my_routers = [
     {
@@ -34,7 +34,7 @@ const my_routers = [
         exact:false,
         path:"/my/myRadioStation",
         context:"我的电台",
-        iconfontName:"iconfont icon-xianxing_diantai",
+        iconfontName:"iconfont icon-shouyinji",
         component:MyRadioStation,
         meta:{
             title:"我的..."
