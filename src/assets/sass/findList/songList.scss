@@ -1,0 +1,30 @@
+@import "../mixin.scss";
+#SongListSquare{
+    overflow: hidden;
+    .top_tab{
+        width: 100%;
+        height: px2rem(55px);
+        position: fixed;
+        background: #fff;
+        h3{
+            height: px2rem(25px);         
+        }
+        ul{
+            color: red;
+            height: px2rem(30px);
+            display: flex;
+            justify-content: space-around;          
+        }
+    }
+    .song_list_show{      
+        margin-top: px2rem(55px);
+        background: #fcc;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap; 
+        div{
+            width: px2rem(100px);
+        }   
+    }
+}
