@@ -1,8 +1,11 @@
 @import './mixin.scss';
-
+@import "./findList/songList.scss";
+@import "./findList/MusicPlayingInterface.scss";
 #find{
+    //头部搜索
     .top_search{
         position: fixed;
+        z-index: 10;
         top: px2rem(0px);
         display: flex;
         height: px2rem(45px);
@@ -27,48 +30,35 @@
             line-height: px2rem(30px);      
         };
     }
+    // 轮播
     .wrapper{
         margin-top: px2rem(45px);
         width: px2rem(375px);
-        background: #fcc;
-        .content{
-            li{
-                justify-content: left;
-                border: 2px solid blue;
-                img{              
-                 width: 100%;
-                }
+        .swiper-container{
+            .swiper-wrapper{
+                .swiper-slide{
+                    img{
+                        width: 100%;
+                    }
+                } 
             }
-            
         }
     }
+    // 推荐卡、导航
     .tab_card{
         height: px2rem(60px);
         width: 100%;
-        background: cornflowerblue;
-        ul{
-            display: flex;
-            justify-content: space-around;
-            font-size: px2rem(12px);       
-            li{
-                width: px2rem(50px);
-                height: px2rem(50px);
-                background: #fcc;
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;             
-                .iconfont{
-                    height: px2rem(40px);
-                    width: px2rem(40px);
-                    border:1px solid #ecebe9;
-                    // margin-left: px2rem(-2px);
-                    border-radius: 50%;
-                    // display: flex;
-                    // align-items: center;
-                    // justify-content: space-around;
-                    // text-decoration: none;
-                }
-            }
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        .tab_btn{
+            font-size: px2rem(14px);       
+            width: px2rem(75px); 
+            .iconfont{
+                font-size: px2rem(14px);  
+                color: #da3f3b;
+            }       
         }
     }
     .song_list,.new_pan{
@@ -81,21 +71,6 @@
                 border: 1px solid red;
                 width: px2rem(100px);
                 height: px2rem(100px);
-                margin-bottom: px2rem(40px);
-                img{
-                    width: 100%;
-                }
-            }
-        }     
-    }
-    .selected{
-        ul{
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            li{
-                border: 1px solid red;
-                width: 100%;
                 margin-bottom: px2rem(40px);
                 img{
                     width: 100%;

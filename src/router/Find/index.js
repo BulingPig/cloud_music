@@ -1,4 +1,4 @@
-//import BoFang from "../../views/Find/bofang/bofang"
+import MusicPlayingInterface from "../../components/MusicPlayingInterface/MusicPlayingInterface"
 import Recommend from "../../views/Find/Navigation/Recommend"
 import SongList from "../../views/Find/Navigation/SongList"
 import Rank from "../../views/Find/Navigation/Rank"
@@ -10,6 +10,7 @@ export default [
         path: "/Find/recommend",
         noNeed:false,
         // exact: true,
+        isShow:true,
         context: "每日推荐",
         iconfontName: "iconfont icon-tubiaozhizuomoban",
         component: Recommend,
@@ -18,9 +19,10 @@ export default [
         }
     },
     {
-        to: "/Find/Recommend",
-        path: "/Find/Recommend",
+        to: "/Find/SongList",
+        path: "/Find/SongList",
         noNeed:false,
+        isShow:true,
         // exact: true,
         context: "歌单",
         iconfontName: "iconfont icon-tubiaozhizuomoban",
@@ -33,6 +35,7 @@ export default [
         to: "/Find/rank",
         path: "/Find/rank",
         noNeed:false,
+        isShow:true,
         // exact: true,
         context: "排行榜",
         iconfontName: "iconfont icon-tubiaozhizuomoban",
@@ -45,6 +48,7 @@ export default [
         to: "/Find/radiostation",
         path: "/Find/radiostation",
         noNeed:false,
+        isShow:true,
         // exact: true,
         context: "电台",
         iconfontName: "iconfont icon-tubiaozhizuomoban",
@@ -57,6 +61,7 @@ export default [
         to: "/Find/Live",
         path: "/Find/Live",
         noNeed:false,
+        isShow:true,
         // exact: true,
         context: "直播",
         iconfontName: "iconfont icon-tubiaozhizuomoban",
@@ -65,16 +70,18 @@ export default [
             title: "直播"
         }
     },
-    // {
-    //     to: "/bofang/:songid",
-    //     path: "/bofang/:songid",
-    //     noNeed:false,
-    //     // exact: true,
-    //     context: "播放",
-    //     iconfontName: "iconfont icon-tubiaozhizuomoban",
-    //    component: boFang,
-    //     meta: {
-    //         title: "播放"
-    //     }
-    //},
+    {
+        to: "/bofang/:songid",
+        path: "/bofang/:songid",
+        noNeed:false,
+        type:"bofang",
+        isShow:false,
+        // exact: true,
+        context: "播放",
+        iconfontName: "iconfont icon-tubiaozhizuomoban",
+        component: MusicPlayingInterface,
+        meta: {
+            title: "播放"
+        }
+    },
 ]

@@ -9,11 +9,11 @@ export default class PhoneLogin extends React.Component{
             value:""
         }
     }
-    componentWillReceiveProps(props){
-        this.setState({
-            value:props.value
-        })
-    }
+    // componentWillReceiveProps(props){
+    //     this.setState({
+    //         value:props.value
+    //     })
+    // }
     render(){
         return(
             <div>
@@ -67,13 +67,7 @@ export default class PhoneLogin extends React.Component{
             if(data.exist!==-1){//如果注册，就跳转到登录
                 this.props.history.push("/account/PassWord")
             }else{//如果没有注册就跳转到注册
-                this.props.history.push({
-                    pathname:"/account/Verification",
-                    state:{
-                        phone:this.state.value
-                    }
-
-                })
+                this.props.history.push("/account/Verification/"+phoneNumber)
                 localStorage.phone = phoneNumber
             }
         })
