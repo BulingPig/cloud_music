@@ -1,0 +1,99 @@
+@import './mixin.scss';
+
+#video{
+// *****************navbar********************
+
+    .navBar{
+        z-index: 1;
+        background: #da3f3b;
+        position: sticky;
+        top:px2rem(0px);
+        width: px2rem(375px);
+        height: px2rem(94px);
+        overflow:hidden;
+        .navoinp{
+            display: block;
+            width: px2rem(277px);
+            height: px2rem(33px);
+            margin:0 auto;
+            top:px2rem(21px);
+            left:px2rem(51px);
+            font-size:px2rem(15px);
+            font-weight: 100;
+            color:white;
+            outline:none;
+            background: #f0d3d2;
+            text-align: center;
+            border-radius: px2rem(20px);
+            opacity:0.4;
+            position:absolute;
+            border:1px #da3f3b solid;
+            outline: none;
+
+        };
+    
+        .iconone{
+            color:white;
+            position:absolute;
+            font-size:px2rem(18px);
+            width: px2rem(14px);
+            height: px2rem(16px);
+            top:px2rem(30px);
+            left:px2rem(95px);
+            opacity: 0.4;
+        }
+        .icontwo{
+            color:white;
+            position:absolute;
+            font-size:px2rem(18px);
+            width: px2rem(24px);
+            height: px2rem(18px);
+            top:px2rem(30px);
+            left:px2rem(15px);
+        }
+        .iconthree{
+            color:white;
+            position:absolute;
+            font-size:px2rem(18px);
+            width: px2rem(24px);
+            height: px2rem(18px);
+            top:px2rem(28px);
+            right:px2rem(15px);
+        }
+   
+    }
+// ********************list*****************
+
+     .listWrap{
+        .wrapimgvido{   
+            margin-left: px2rem(14px);
+            margin-top:px2rem(12px);
+            width:px2rem(348px);
+            height: px2rem(195px);
+            // border:2px solid gold;
+            overflow: hidden;
+        }
+        .img,.video{
+            width:px2rem(348px);
+            height: px2rem(195px);
+            margin-bottom:px2rem(10px) ;
+            border-radius: px2rem(6px);
+        }
+        // .videotwo{
+            
+        // }
+        h3{
+            font-size:  px2rem(14x);
+            font-weight: 500;
+            margin-left: px2rem(15px);
+            margin-bottom: px2rem(7px);
+
+        }
+        .shadow{
+            width:px2rem(375px);
+            height: px2rem(5px);
+            background: #f7f7f7;
+        }
+    }
+    
+}
