@@ -1,5 +1,5 @@
-import React from 'react'
-import axios from 'axios'
+import React from './node_modules/react'
+import axios from './node_modules/axios'
 class Live extends React.Component {
     constructor() {
         super()

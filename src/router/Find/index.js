@@ -1,4 +1,4 @@
-import BoFang from "../../views/Find/bofang/bofang"
+//import BoFang from "../../views/Find/bofang/bofang"
 import Recommend from "../../views/Find/Navigation/Recommend"
 import SongList from "../../views/Find/Navigation/SongList"
 import Rank from "../../views/Find/Navigation/Rank"
@@ -65,16 +65,16 @@ export default [
             title: "直播"
         }
     },
-    {
-        to: "/bofang/:songid",
-        path: "/bofang/:songid",
-        noNeed:false,
-        // exact: true,
-        context: "播放",
-        iconfontName: "iconfont icon-tubiaozhizuomoban",
-        component: BoFang,
-        meta: {
-            title: "播放"
-        }
-    },
+    // {
+    //     to: "/bofang/:songid",
+    //     path: "/bofang/:songid",
+    //     noNeed:false,
+    //     // exact: true,
+    //     context: "播放",
+    //     iconfontName: "iconfont icon-tubiaozhizuomoban",
+    //    component: boFang,
+    //     meta: {
+    //         title: "播放"
+    //     }
+    //},
 ]
