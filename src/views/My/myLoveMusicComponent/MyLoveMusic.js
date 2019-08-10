@@ -117,18 +117,20 @@ export default class myLoveMusic extends Component {
         )
     }
    async componentDidMount(){
-    const data = await axios.get("/user/playlist?uid="+localStorage.id)
-    var arr = this.state.songList;
-    for(var i=0; i<data.playlist.length; i++){
-        arr.push({
-            name:data.playlist[i].name,
-            allNum:data.playlist[i].trackCount,
-            songListId:data.playlist[i].id,
-        })
-    }
-    this.setState({
-        songList:arr
-    })
+        if(localStorage.id){
+            const data = await axios.get("/user/playlist?uid="+localStorage.id)
+            var arr = this.state.songList;
+            for(var i=0; i<data.playlist.length; i++){
+                arr.push({
+                    name:data.playlist[i].name,
+                    allNum:data.playlist[i].trackCount,
+                    songListId:data.playlist[i].id,
+                })
+            }
+            this.setState({
+                songList:arr
+            })
+        }
    }
 
 }

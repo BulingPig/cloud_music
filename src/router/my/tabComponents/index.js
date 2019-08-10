@@ -122,6 +122,7 @@ const routers = [
         to:"/my/SongListDetail",
         type:"SongListDetail",
         exact:true,
+        isShow:true,
         path:"/my/SongListDetail/:id",
         context:"歌单详情",
         component:SongListDetail,

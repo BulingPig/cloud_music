@@ -402,7 +402,13 @@
                     top: px2rem(5px);
                     left: px2rem(40px);
                     font-size: px2rem(14px);
+                    width: px2rem(230px);
+                    text-align: left;
                     color: #3c3c3c;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                     -webkit-line-clamp: 1;
+                     overflow: hidden;
                 }
                 .songAuthorName{
                     position: absolute;

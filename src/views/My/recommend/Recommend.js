@@ -37,9 +37,9 @@ class Recommend extends Component {
         )
     }
     async componentDidMount(){
-        const data = await axios.get("/personalized?limit=6")
+        const data = await axios.get("/personalized?limit=12")
         this.setState({
-            recommendList:data.result
+            recommendList:data.result.splice(0,6)
         })
     }
 }
