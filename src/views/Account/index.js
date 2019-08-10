@@ -208,39 +208,40 @@ export default class Account extends Component {
             this.refs.beforelogin.style.display="none";
             this.refs.afterlogin.style.display="block";
             this.refs.exit.style.display="block";
-            this.refs.vip.style.marginTop="80px"
+            this.refs.vip.style.marginTop="80px";
+            axios.get("/user/follows?uid="+localStorage.id)
+            .then(data=>{
+                this.setState({
+                    attentionNum:data.follow
+                })
+            })
+            axios.get("/user/followeds?uid="+localStorage.id)
+            .then(data=>{
+                this.setState({
+                    fansList:data.followeds
+                })
+            })
+            axios.get("/user/event?uid="+localStorage.id)
+            .then(data=>{
+                // console.log(data.events.length)
+                this.setState({
+                    stateList:data.events
+                })
+            })
+            axios.get("/user/detail?uid="+localStorage.id)
+            .then(data=>{
+                // console.log("用户详情",data.profile)
+                this.setState({
+                    detail:data.profile
+                })
+            })
         }else{
             this.refs.beforelogin.style.display="block";
             this.refs.something.style.paddingTop="70px";
             this.refs.afterlogin.style.display="none";
             this.refs.exit.style.display="none";
         }
-        axios.get("/user/follows?uid="+localStorage.id)
-        .then(data=>{
-            this.setState({
-                attentionNum:data.follow
-            })
-        })
-        axios.get("/user/followeds?uid="+localStorage.id)
-        .then(data=>{
-            this.setState({
-                fansList:data.followeds
-            })
-        })
-        axios.get("/user/event?uid="+localStorage.id)
-        .then(data=>{
-            // console.log(data.events.length)
-            this.setState({
-                stateList:data.events
-            })
-        })
-        axios.get("/user/detail?uid="+localStorage.id)
-        .then(data=>{
-            // console.log("用户详情",data.profile)
-            this.setState({
-                detail:data.profile
-            })
-        })
+       
 
     }
 }

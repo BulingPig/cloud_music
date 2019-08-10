@@ -13,9 +13,10 @@ export default class PassWord extends React.Component{
         })
     }
     componentWillMount(){
-        console.log(1122211,this.props.location.state)
+        console.log(1122211,this.props.location)
     }
     render(){
+        console.log(55555,this.props.match.params.a)
         return(
             <div>
                 {/* 头部 */}

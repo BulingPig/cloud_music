@@ -227,10 +227,7 @@
         font-size: px2rem(12px);
         color: #e6e5e3;
     }
-    .photoBackgroug-background{
-        width: px2rem(375px);
-        height: px2rem(250px);
-    }
+   
     .photoBackgroud-followeds{
         position: absolute;
         top: px2rem(140px);
@@ -279,7 +276,6 @@
     }
     width: 100%;
     height: px2rem(250px);
-    background: #1a2d33;
     position: relative;
 }
 .photoNav{
@@ -296,10 +292,31 @@
 }
 .photoBackgroud-box{
     border-radius: px2rem(20px);
-}
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top:px2rem(270px);
 
+}
+.photo-margintop{
+    margin-top: px2rem(30px);
+}
 .dataImg{
     width: px2rem(375px);
+}
+.photoBackgroud-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: px2rem(58px);
+    background: rgba(255, 255, 255, 0);
+    margin-top: px2rem(-300px);
+    color: #fff;
+}
+.photoBackgroug-background{
+    width: px2rem(375px);
+    height: px2rem(300px);
 }
 /*----------------------------VIP-------------------------------*/
 .account-vip{
@@ -378,10 +395,13 @@
     align-items: center;
    
     .everyone{
+        display: inline-block;
         width: px2rem(87px);
-        height: 100%;
+        height: px2rem(28px);
         border-radius: px2rem(12px);
         font-size: px2rem(14px);
+        color: #fff;
+        line-height: px2rem(28px);
     }
     
 }

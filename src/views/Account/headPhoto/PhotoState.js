@@ -9,7 +9,7 @@ export default class PhotoState extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="photo-margintop">
                  {
                     this.state.stateList.map((v,i)=>{
                         return(

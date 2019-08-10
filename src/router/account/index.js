@@ -75,8 +75,8 @@ const routers=[
      * ******************************我的消息***********
      */
     {
-        to:"/account/information/personalletter",
-        path:"/account/information/personalletter",
+        to:"/account/information/",
+        path:"/account/information/",
         context:"私信",
         exact:true,
         component:PersonalLetter,
@@ -125,7 +125,7 @@ const routers=[
     },
     {
         to:"/account/verification",
-        path:"/account/verification",
+        path:"/account/verification/:a",
         context:"手机号验证",
         component:Verification,
         type:3,
@@ -150,6 +150,7 @@ const routers=[
         path:"/account/attention",
         context:"关注",
         component:Attention,
+        isShow:true,
         type:3,
     },
     {
@@ -157,6 +158,7 @@ const routers=[
         path:"/account/state",
         context:"动态",
         component:State,
+        isShow:true,
         type:3,
     },
     {
@@ -164,6 +166,7 @@ const routers=[
         path:"/account/fans",
         context:"粉丝",
         component:Fans,
+        isShow:true,
         type:3,
     },
     {
@@ -188,8 +191,8 @@ const routers=[
  * *************************点击头像的音乐、动态、我的路由***************************
  */
 {
-    to:"/account/headphoto/photomusic",
-    path:"/account/headphoto/photomusic",
+    to:"/account/headphoto/",
+    path:"/account/headphoto/",
     context:"音乐",
     component:PhotoMusic,
     exact:true,

@@ -45,7 +45,7 @@ export default class State extends React.Component{
         // var arr = this.state.stateList;
         axios.get("/user/event?uid="+localStorage.id)
         .then(data=>{
-            console.log(22,data.events)
+            console.log("获取用户动态",data.events)
             
             if(data.events.length===0){
                 this.refs.haveno.style.display="block"
