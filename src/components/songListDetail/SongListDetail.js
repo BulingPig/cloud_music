@@ -14,9 +14,9 @@ export default class SongListDetail extends Component {
     }
     
     render() {
-        console.log(5555555,this.props)
+        //console.log(5555555,this.props)
         //console.log(111111,this.state.songDetailArr)
-        //console.log(222222,this.state.songListDetailMsg)
+        console.log(222222,this.state.songListDetailMsg)
         return (
             <div id="songListDetail">
                 <div className="wrap" id="songListPic">
@@ -29,7 +29,7 @@ export default class SongListDetail extends Component {
                         <span className="iconfont icon-gengduo"></span>
                 </div>
                 <div className="songListTitle">
-                    <input type="text" placeholder="搜索歌单内的歌曲"/>
+                    <input type="text" placeholder="搜索歌单内的歌曲" ref={"searchSong"} />
                     <div className="songListPic">
                         <div className="songListBg">
                             <img src={this.state.songListDetailMsg.songListPic} alt=""/>
@@ -90,7 +90,7 @@ export default class SongListDetail extends Component {
         var songListDetailMsg = this.state.songListDetailMsg;
 
         const data = await axios.get("/playlist/detail?id="+this.props.match.params.id)
-        console.log(data)
+        //console.log(8888888888,data)
         for(var i=0; i<data.playlist.tracks.length; i++){
             songDetailArr.push({
                 songName:data.playlist.tracks[i].name,
@@ -107,6 +107,7 @@ export default class SongListDetail extends Component {
         songListDetailMsg.authorName = data.playlist.creator.nickname;
         songListDetailMsg.authorHeadPicUrl = data.playlist.creator.avatarUrl;
         songListDetailMsg.authorBgPicUrl = data.playlist.creator.backgroundUrl;
+        songListDetailMsg.authorId = data.playlist.creator.userId;
         
         this.setState({
             songDetailArr:songDetailArr,
