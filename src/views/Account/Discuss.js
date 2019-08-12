@@ -40,7 +40,6 @@ export default class Discuss extends React.Component{
                 this.refs.yes.style.display="none";
                 this.refs.no.style.display="blcok";
             }
-            console.log("评论",data.comments)
             var arr = this.state.discussList;
             for(var i=0;i<data.comments.length;i++){
                 arr.push({
@@ -57,7 +56,7 @@ export default class Discuss extends React.Component{
         })
         axios.get("/msg/private/history?uid="+localStorage.id)
         .then(data=>{
-            console.log(1112222333333,data)
+            // console.log(1112222333333,data)
         })
     }
 }

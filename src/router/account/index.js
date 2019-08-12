@@ -16,6 +16,7 @@ import PhoneLogin from "../../views/Account/login/PhoneLogin"
 import Verification from "../../views/Account/login/Verification"
 import PassWord from "../../views/Account/login/PassWord"
 import Register from "../../views/Account/login/Register"
+import ChangePassword from "../../views/Account/login/ChangePassword"
 /**
  * *************************登录以后的动态。关注、粉丝、编辑资料***************************
  */
@@ -142,6 +143,13 @@ const routers=[
         path:"/account/Register",
         context:"注册信息",
         component:Register,
+        type:3,
+    },
+    {
+        to:"/account/ChangePassword",
+        path:"/account/ChangePassword",
+        context:"修改密码",
+        component:ChangePassword,
         type:3,
     },
     //登录后的动态关注粉丝编辑资料

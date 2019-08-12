@@ -36,7 +36,16 @@ export default class SongListDetail extends Component {
                             <span className="iconfont icon-z"> {this.state.songListDetailMsg.playCount}</span>
                         </div>
                         <div className="songListName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.songListDetailMsg.songListName}</div>
-                        <span className="authorHeadPicUrl"><img src={this.state.songListDetailMsg.authorHeadPicUrl} alt=""/></span>
+                        <span className="authorHeadPicUrl" onClick={()=>{
+                            this.props.history.push(
+                                {   
+                                    pathname:"/account/headphoto",
+                                    state:{
+                                        userId:this.state.songListDetailMsg.authorId
+                                    }
+                                }
+                                )
+                        }}><img src={this.state.songListDetailMsg.authorHeadPicUrl} alt=""/></span>
                         <span className="authorName">{this.state.songListDetailMsg.authorName}</span>              
                     </div>
                 </div>

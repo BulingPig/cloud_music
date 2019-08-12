@@ -8,9 +8,7 @@ export default class Verification extends React.Component{
         }
     }
     componentWillReceiveProps(props){
-        this.setState({
-            value:props.value
-        })
+        // console.log(11111111111111111111111,this.props)
     }
     render(){
         return(

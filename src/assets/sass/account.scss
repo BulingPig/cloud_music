@@ -613,3 +613,23 @@
     font-size: px2rem(12px);
     color: #a0a0a0;
 }
+/*--------------------------------------------------------*/
+.loveSong{
+    position: absolute;
+    top:px2rem(360px);
+    left: px2rem(20px);
+}
+.loveName{
+    position: absolute;
+    top:px2rem(400px);
+    left: px2rem(75px);
+    font-size: px2rem(16px);
+}
+.loveImg{
+    width: px2rem(50px);
+    height: px2rem(50px);
+    border-radius: px2rem(5px);
+    position: absolute;
+    top:px2rem(390px);
+    left: px2rem(15px);
+}
