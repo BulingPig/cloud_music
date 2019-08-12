@@ -44,8 +44,9 @@ export default class HeadPhoto extends React.Component{
                             return(
                                   v.type === 5?
                                         <div key={i} style={{float:"left"}}>
-                                            <p><NavLink to={v.to}>{v.context}</NavLink></p>
+                                            <p><NavLink to={{pathname:v.path,state:{userId:v.userId}}}>{v.context}</NavLink></p>
                                         </div>:null
+
                                    
                             ) 
                         })
@@ -56,12 +57,20 @@ export default class HeadPhoto extends React.Component{
         )
     }
     componentDidMount(){
-        axios.get("/user/detail?uid="+localStorage.id)
+        if(this.props.location.state){
+            axios.get("/user/detail?uid="+this.props.location.state.userId)
         .then(data=>{
-            console.log("用户详情",data)
             this.setState({
                 detail:data.profile
             })
         })
+        }else{
+            axios.get("/user/detail?uid="+localStorage.id)
+            .then(data=>{
+                this.setState({
+                    detail:data.profile
+                })
+            })
+        }
     }
 }
