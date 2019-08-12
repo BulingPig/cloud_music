@@ -61,18 +61,25 @@
             }       
         }
     }
+    //推荐歌单、新碟
     .song_list,.new_pan{
         margin-bottom: px2rem(30px);
         ul{
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            li{
-                border: 1px solid red;
+            li{            
                 width: px2rem(100px);
                 height: px2rem(100px);
                 margin-bottom: px2rem(40px);
+                font-size: px2rem(12px);
+                span{                  
+                    display: flex;
+                    height: 32px;
+                    overflow: hidden;
+                }
                 img{
+                    border-radius: 5px;
                     width: 100%;
                 }
             }

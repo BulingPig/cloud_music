@@ -5,40 +5,41 @@ import { relative } from 'path';
 
 
 export default class SongListDetail extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            songDetailArr:[],
-            songListDetailMsg:{}
+            songDetailArr: [],
+            songListDetailMsg: {}
         }
     }
-    
+
     render() {
         //console.log(111111,this.state.songDetailArr)
         //console.log(222222,this.state.songListDetailMsg)
+        console.log(77777)
         return (
             <div id="songListDetail">
                 <div className="wrap" id="songListPic">
-                  
+
                 </div>
                 <div className="middle">
-                <div className="top">
-                        <span className="left" onClick={()=>{this.props.history.go(-1)}}>返回</span>
+                    <div className="top">
+                        <span className="left" onClick={() => { this.props.history.go(-1) }}>返回</span>
                         <span>歌单</span>
                         <span className="iconfont icon-gengduo"></span>
-                </div>
-                <div className="songListTitle">
-                    <input type="text" placeholder="搜索歌单内的歌曲"/>
-                    <div className="songListPic">
-                        <div className="songListBg">
-                            <img src={this.state.songListDetailMsg.songListPic} alt=""/>
-                            <span className="iconfont icon-z"> {this.state.songListDetailMsg.playCount}</span>
-                        </div>
-                        <div className="songListName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.songListDetailMsg.songListName}</div>
-                        <span className="authorHeadPicUrl"><img src={this.state.songListDetailMsg.authorHeadPicUrl} alt=""/></span>
-                        <span className="authorName">{this.state.songListDetailMsg.authorName}</span>              
                     </div>
-                </div>
+                    <div className="songListTitle">
+                        <input type="text" placeholder="搜索歌单内的歌曲" />
+                        <div className="songListPic">
+                            <div className="songListBg">
+                                <img src={this.state.songListDetailMsg.songListPic} alt="" />
+                                <span className="iconfont icon-z"> {this.state.songListDetailMsg.playCount}</span>
+                            </div>
+                            <div className="songListName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.songListDetailMsg.songListName}</div>
+                            <span className="authorHeadPicUrl"><img src={this.state.songListDetailMsg.authorHeadPicUrl} alt="" /></span>
+                            <span className="authorName">{this.state.songListDetailMsg.authorName}</span>
+                        </div>
+                    </div>
                 </div>
                 <div id="playAll">
                     <div className="wrap">
@@ -50,66 +51,103 @@ export default class SongListDetail extends Component {
                     </div>
                 </div>
                 <div className="songList">
-                   {
-                       this.state.songDetailArr.map((v,i)=>{
-                           return(
-                               <div className="loopSongList" key={i}>
-                                   <span className="order">{i+1}</span>
-                                   <span className="songMsg">
-                                       <b className="songName">{v.songName}</b>
-                                       <b className="songAuthorName">{v.songAuthorName}</b>
-                                   </span>
-                                   <span className="iconfont icon-zhongxinshipin"></span>
-                                   <span className="iconfont icon-gengduo"></span>
-                               </div>
-                           )
-                       })
-                   }
+                    {
+                        this.state.songDetailArr.map((v, i) => {
+                            return (
+                                <div className="loopSongList" key={i}>
+                                    <span className="order">{i + 1}</span>
+                                    <span className="songMsg">
+                                        <b className="songName">{v.songName}</b>
+                                        <b className="songAuthorName">{v.songAuthorName}</b>
+                                    </span>
+                                    <span className="iconfont icon-zhongxinshipin"></span>
+                                    <span className="iconfont icon-gengduo"></span>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         )
     }
-    Bgpig(){
+    Bgpig() {
         var pic = document.getElementById("songListPic");
-        pic.style.backgroundImage = "url("+this.state.songListDetailMsg.songListPic+")"
+        pic.style.backgroundImage = "url(" + this.state.songListDetailMsg.songListPic + ")"
         pic.style.backgroundSize = "cover"
         pic.style.position = "relative"
         pic.style.filter = "blur(15px)";
     }
-    async componentDidMount(){
+    async componentDidMount() {
         var songDetailArr = [];
         var songListDetailMsg = this.state.songListDetailMsg;
 
-        const data = await axios.get("/playlist/detail?id="+this.props.match.params.id)
-        console.log(data)
-        for(var i=0; i<data.playlist.tracks.length; i++){
-            songDetailArr.push({
-                songName:data.playlist.tracks[i].name,
-                songId:data.playlist.tracks[i].id,
-                songAuthorName:data.playlist.tracks[i].ar[0].name,
-                songPic:data.playlist.tracks[i].al.picUrl
+        if (this.props.match.params.id === "tj") {
+            const data = await axios.get("/playlist/detail?id=2910628861")
+            for (var i = 0; i < data.playlist.tracks.length; i++) {
+                songDetailArr.push({
+                    songName: data.playlist.tracks[i].name,
+                    songId: data.playlist.tracks[i].id,
+                    songAuthorName: data.playlist.tracks[i].ar[0].name,
+                    songPic: data.playlist.tracks[i].al.picUrl
+                })
+            }
+            songListDetailMsg.songListName = data.playlist.name;
+            songListDetailMsg.songListPic = data.playlist.coverImgUrl;
+            songListDetailMsg.songListDescription = data.playlist.description;
+            songListDetailMsg.playCount = data.playlist.playCount;
+            songListDetailMsg.allNum = data.playlist.trackCount;
+            songListDetailMsg.authorName = data.playlist.creator.nickname;
+            songListDetailMsg.authorHeadPicUrl = data.playlist.creator.avatarUrl;
+            songListDetailMsg.authorBgPicUrl = data.playlist.creator.backgroundUrl;
+
+            this.setState({
+                songDetailArr: songDetailArr,
+                songListDetailMsg: songListDetailMsg
             })
-        }
-        songListDetailMsg.songListName = data.playlist.name;
-        songListDetailMsg.songListPic = data.playlist.coverImgUrl;
-        songListDetailMsg.songListDescription = data.playlist.description;
-        songListDetailMsg.playCount = data.playlist.playCount;
-        songListDetailMsg.allNum = data.playlist.trackCount;
-        songListDetailMsg.authorName = data.playlist.creator.nickname;
-        songListDetailMsg.authorHeadPicUrl = data.playlist.creator.avatarUrl;
-        songListDetailMsg.authorBgPicUrl = data.playlist.creator.backgroundUrl;
-        
-        this.setState({
-            songDetailArr:songDetailArr,
-            songListDetailMsg:songListDetailMsg
-        })
-        this.Bgpig();
-        var odh = document.getElementById("playAll");
-        window.onscroll = function(){
-            if(document.documentElement.scrollTop > 1){
-                odh.style.position = "sticky";
-                odh.style.top = 45 + "px";
+            this.Bgpig();
+            var odh = document.getElementById("playAll");
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 1) {
+                    odh.style.position = "sticky";
+                    odh.style.top = 45 + "px";
+                }
+
+            }
+        } else {
+            const data = await axios.get("/playlist/detail?id=" + this.props.match.params.id)
+            for (var i = 0; i < data.playlist.tracks.length; i++) {
+                songDetailArr.push({
+                    songName: data.playlist.tracks[i].name,
+                    songId: data.playlist.tracks[i].id,
+                    songAuthorName: data.playlist.tracks[i].ar[0].name,
+                    songPic: data.playlist.tracks[i].al.picUrl
+                })
+            }
+            songListDetailMsg.songListName = data.playlist.name;
+            songListDetailMsg.songListPic = data.playlist.coverImgUrl;
+            songListDetailMsg.songListDescription = data.playlist.description;
+            songListDetailMsg.playCount = data.playlist.playCount;
+            songListDetailMsg.allNum = data.playlist.trackCount;
+            songListDetailMsg.authorName = data.playlist.creator.nickname;
+            songListDetailMsg.authorHeadPicUrl = data.playlist.creator.avatarUrl;
+            songListDetailMsg.authorBgPicUrl = data.playlist.creator.backgroundUrl;
+
+            this.setState({
+                songDetailArr: songDetailArr,
+                songListDetailMsg: songListDetailMsg
+            })
+            this.Bgpig();
+            var odh = document.getElementById("playAll");
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 1) {
+                    odh.style.position = "sticky";
+                    odh.style.top = 45 + "px";
+                }
             }
         }
+        // const data = await axios.get("/playlist/detail?id="+this.props.match.params.id)
+
+        // console.log(data,111)
+
     }
 }

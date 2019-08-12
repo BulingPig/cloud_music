@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { withRouter } from "react-router-dom"
+import { from } from "_array-flatten@2.1.2@array-flatten";
 class RecommendedSongList extends React.Component {
     constructor() {
         super()
@@ -14,7 +16,7 @@ class RecommendedSongList extends React.Component {
                 <ul>
                     {
                         this.state.recommendedSongList.map((v, i) => {
-                            return <li key={i}><img src={v.picUrl} alt="" /> {v.name}</li>
+                            return <li key={i} onClick={()=>this.props.history.push('/my/SongListDetail/'+v.id)}><img src={v.picUrl} alt="" /><span> {v.name}</span></li>
                         })
                     }
                 </ul>
@@ -31,4 +33,4 @@ class RecommendedSongList extends React.Component {
           )
     }
 }
-export default RecommendedSongList
+export default withRouter(RecommendedSongList) 
