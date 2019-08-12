@@ -14,6 +14,7 @@ export default class SongListDetail extends Component {
     }
 
     render() {
+        console.log(5555555,this.props)
         //console.log(111111,this.state.songDetailArr)
         //console.log(222222,this.state.songListDetailMsg)
         console.log(77777)
@@ -51,21 +52,29 @@ export default class SongListDetail extends Component {
                     </div>
                 </div>
                 <div className="songList">
-                    {
-                        this.state.songDetailArr.map((v, i) => {
-                            return (
-                                <div className="loopSongList" key={i}>
-                                    <span className="order">{i + 1}</span>
-                                    <span className="songMsg">
-                                        <b className="songName">{v.songName}</b>
-                                        <b className="songAuthorName">{v.songAuthorName}</b>
-                                    </span>
-                                    <span className="iconfont icon-zhongxinshipin"></span>
-                                    <span className="iconfont icon-gengduo"></span>
-                                </div>
-                            )
-                        })
-                    }
+                   {
+                       this.state.songDetailArr.map((v,i)=>{
+                           return(
+                               <div className="loopSongList" key={i} onClick={()=>{this.props.history.push({
+                                   pathname:"/bofang",
+                                   state:{
+                                    songName:v.songName,
+                                    songId:v.songId,
+                                    songAuthorName:v.songAuthorName,
+                                    songPic:v.songPic
+                                   }
+                               })}} >
+                                   <span className="order">{i+1}</span>
+                                   <span className="songMsg">
+                                       <b className="songName">{v.songName}</b>
+                                       <b className="songAuthorName">{v.songAuthorName}</b>
+                                   </span>
+                                   <span className="iconfont icon-zhongxinshipin"></span>
+                                   <span className="iconfont icon-gengduo"></span>
+                               </div>
+                           )
+                       })
+                   }
                 </div>
             </div>
         )

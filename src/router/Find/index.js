@@ -71,8 +71,8 @@ export default [
         }
     },
     {
-        to: "/bofang/:songid",
-        path: "/bofang/:songid",
+        to: "/bofang",
+        path: "/bofang",
         noNeed:false,
         type:"bofang",
         isShow:false,

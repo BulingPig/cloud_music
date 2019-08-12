@@ -26,7 +26,7 @@ class Recommend extends Component {
                         this.state.recommendList.map((v,i)=>{
                             return(
                                 <div key={i} className="wrapLoop" onClick={()=>{this.props.history.push("/my/SongListDetail/"+this.state.recommendList[i].id)}}>
-                                    <p className="pic"><img className="imges" src={v.picUrl} alt=""/></p>
+                                    <p className="pic"><img className="imges" src={v.picUrl} alt=""/></p>   
                                     <p className="text">{v.name}</p>
                                 </div>
                             )

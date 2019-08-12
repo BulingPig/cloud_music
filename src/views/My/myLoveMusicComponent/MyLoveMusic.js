@@ -47,19 +47,7 @@ export default class myLoveMusic extends Component {
         this.refs.addSongList.style.display = "block";
         this.refs.songListName.value = "";
     }
-    addSongLsit(){
-        var arr = this.state.songList;
-        var obj = {};
-        if(this.refs.songListName.value !== ""){
-            obj.name = this.refs.songListName.value;
-            obj.allNum = 0;
-            arr.push(obj)
-        this.setState({
-            songList:arr
-        })
-        this.addSongListNone();
-        }
-    }
+    
     changeColor(){
         if(this.refs.songListName.value === ""){
             this.refs.did.style.color = "#e5e5e5"
@@ -76,7 +64,7 @@ export default class myLoveMusic extends Component {
                         <span className="iconfont icon-xiangxia" ref={"after"} style={{display:"none",float:"left"}} ></span>
                         <span className="songList">
                             我创建的歌单
-                            <span>{"("+1+")"}</span>
+                            <span>{"("+this.state.songList.length+")"}</span>
                         </span>
                     </p>
                     <p className="right">
@@ -108,7 +96,7 @@ export default class myLoveMusic extends Component {
                         <div className="top">
                                 <span className="cancel" onClick={this.addSongListNone.bind(this)}>取消</span>
                                 <b>创建歌单</b>
-                                <span className="did" ref={"did"} onClick={this.addSongLsit.bind(this)}>完成</span>
+                                <span className="did" ref={"did"} onClick={this.addPlayList.bind(this)}>完成</span>
                         </div>
                         <input type="text" placeholder="输入歌单标题" ref={"songListName"} onChange={this.changeColor.bind(this)} />
                     </div>
@@ -116,20 +104,30 @@ export default class myLoveMusic extends Component {
             </div>
         )
     }
-   async componentDidMount(){
-        if(localStorage.id){
-            const data = await axios.get("/user/playlist?uid="+localStorage.id)
-            var arr = this.state.songList;
-            for(var i=0; i<data.playlist.length; i++){
-                arr.push({
-                    name:data.playlist[i].name,
-                    allNum:data.playlist[i].trackCount,
-                    songListId:data.playlist[i].id,
-                })
-            }
-            this.setState({
-                songList:arr
+    async addPlayList(){
+        const data = await axios.get("/playlist/create?name="+this.refs.songListName.value)
+        this.getPlayList();
+        this.refs.addSongList.style.display = "none";
+    }
+    async getPlayList(){
+        const data = await axios.get("/user/playlist?uid="+localStorage.id)
+        console.log(data)
+        var arr = [];
+        for(var i=0; i<data.playlist.length; i++){
+            arr.push({
+                name:data.playlist[i].name,
+                allNum:data.playlist[i].trackCount,
+                songListId:data.playlist[i].id,
             })
+        }
+        this.setState({
+            songList:arr
+        })
+        arr = [];
+    }
+    componentDidMount(){
+        if(localStorage.id){
+            this.getPlayList()
         }
    }
 
