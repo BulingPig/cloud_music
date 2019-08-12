@@ -229,13 +229,14 @@
                 }
             }
             input{
-                background-color:#102c38;
+                background-color:#a4a7a8;
                 border-radius: px2rem(6px);
                 height: px2rem(25px);
                 outline: none;
                 width: 92%;
                 text-align: left;
                 border: none;
+                color: #000;
             }
         }
     }
@@ -402,7 +403,13 @@
                     top: px2rem(5px);
                     left: px2rem(40px);
                     font-size: px2rem(14px);
+                    width: px2rem(230px);
+                    text-align: left;
                     color: #3c3c3c;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                     -webkit-line-clamp: 1;
+                     overflow: hidden;
                 }
                 .songAuthorName{
                     position: absolute;

@@ -14,6 +14,7 @@ export default class SongListDetail extends Component {
     }
     
     render() {
+        console.log(5555555,this.props)
         //console.log(111111,this.state.songDetailArr)
         //console.log(222222,this.state.songListDetailMsg)
         return (
@@ -53,7 +54,15 @@ export default class SongListDetail extends Component {
                    {
                        this.state.songDetailArr.map((v,i)=>{
                            return(
-                               <div className="loopSongList" key={i}>
+                               <div className="loopSongList" key={i} onClick={()=>{this.props.history.push({
+                                   pathname:"/bofang",
+                                   state:{
+                                    songName:v.songName,
+                                    songId:v.songId,
+                                    songAuthorName:v.songAuthorName,
+                                    songPic:v.songPic
+                                   }
+                               })}} >
                                    <span className="order">{i+1}</span>
                                    <span className="songMsg">
                                        <b className="songName">{v.songName}</b>
