@@ -6,17 +6,24 @@ class MusicPlayingInterface extends React.Component {
         this.state = {
             lrc: [],
             isShowLrc: false,
+            songMsg:{}
         }
     }
+    componentWillMount(){
+        this.setState({
+            songMsg:this.props.location.state
+        })
+    }
     render() {
-        console.log(this.props,232323)
+        //console.log(this.state.songMsg)
+        //console.log(this.props,232323)
         return (
-            <div id={"musicPlayingInterface"} >
+            <div id={"musicPlayingInterface"}>
                 <div className={"top_title"}>
                     <span onClick={()=> this.props.history.go(-1) } ><i className={"iconfont icon-fanhui"}></i></span>
                     <div className={"artist-info"}>
-                        <h3>{'Coming Home'}</h3>
-                        <p>(A.N.O. Remix)</p>
+                        <h3>{this.state.songMsg.songName}</h3>
+                        <p>{this.state.songMsg.songAuthorName}</p>
                     </div>
                 </div>
                 <div className="musicPlaying_lyrics noneBar" >
@@ -36,7 +43,7 @@ class MusicPlayingInterface extends React.Component {
                         ) : (
                                 <>
                                     <div className={"img_warp"} onClick={this.lrcIsShow.bind(this)} >
-                                        <img src={"http://p1.music.126.net/ECL2Sqv303tIuO59XYxp_A==/109951164215114670.jpg"} alt="" />
+                                        <img src={this.state.songMsg.songPic} alt="" />
                                     </div>
                                     <ul>
                                         <li> <i className={'iconfont icon-xin'} /> </li>
@@ -50,7 +57,7 @@ class MusicPlayingInterface extends React.Component {
                     }
                 </div>
                 <div className={"audio_player_warp"}>
-                    <audio className={"audio_player"} src={"https://music.163.com/song/media/outer/url?id=" + this.props.match.params.songid + ".mp3 "} controls="controls"
+                    <audio className={"audio_player"} src={"https://music.163.com/song/media/outer/url?id=" + this.state.songMsg.songId + ".mp3 "} controls="controls"
                     // autoPlay="autoplay"
                     >
                     </audio>
@@ -59,13 +66,13 @@ class MusicPlayingInterface extends React.Component {
         )
     }
     lrcIsShow() {
-        this.state.isShowLrc = !this.state.isShowLrc;
+        
         this.setState({
-            isShowLrc: this.state.isShowLrc
+            isShowLrc: !this.state.isShowLrc
         })
     }
     async  componentDidMount() {
-        const data = await axios.get("/lyric?id=" + this.props.match.params.songid)
+        const data = await axios.get("/lyric?id=" + this.state.songMsg.songId)
         this.setState({
             lrc: data.lrc.lyric.split("[")
         })
