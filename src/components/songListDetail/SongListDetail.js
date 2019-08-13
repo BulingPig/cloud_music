@@ -118,14 +118,6 @@ export default class SongListDetail extends Component {
                 songListDetailMsg: songListDetailMsg
             })
             this.Bgpig();
-            var odh = document.getElementById("playAll");
-            window.onscroll = function () {
-                if (document.documentElement.scrollTop > 1) {
-                    odh.style.position = "sticky";
-                    odh.style.top = 45 + "px";
-                }
-
-            }
         } else {
             const data = await axios.get("/playlist/detail?id=" + this.props.match.params.id)
             for (var i = 0; i < data.playlist.tracks.length; i++) {
@@ -150,13 +142,6 @@ export default class SongListDetail extends Component {
                 songListDetailMsg: songListDetailMsg
             })
             this.Bgpig();
-            var odh = document.getElementById("playAll");
-            window.onscroll = function () {
-                if (document.documentElement.scrollTop > 1) {
-                    odh.style.position = "sticky";
-                    odh.style.top = 45 + "px";
-                }
-            }
         }
     }
 }

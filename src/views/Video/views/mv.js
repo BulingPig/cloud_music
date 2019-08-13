@@ -5,6 +5,8 @@ import axios from 'axios'
 export default class Mv extends Component {
     constructor() {
         super()
+        this.num=10
+        this.ind=0
         this.state = {
             loading: true,
             data: [],
@@ -38,42 +40,48 @@ export default class Mv extends Component {
     }
 
     render() {
-
         const arrUrl = this.state.arrUrl
-        console.log(123, arrUrl[0]);
         return (
             <div className="listWrap" id="list">
                 {
                     this.state.loading ? <div className={'wrapimgvido'}>loading...</div> : (
-                        arrUrl.map((item, index) => {
-                            return (
-                                <div key={index} >
-                                    <div className="wrapimgvido" >
-                                        <video className="video" id="videoPlay" poster={item.img}
-                                            preload="auto" onClick={this.handlePlay.bind(this, item.id)} >
-                                            <source src={item.url} type="video/mp4">
-                                            </source>
-                                        </video>
-                                    </div>
-                                    <h3>{item.name}:{item.songName}</h3>
-                                    <div className="shadow"></div>
-
-                                </div>
-                            )
-                        })
+                        <React.Fragment>
+                            {
+                                arrUrl.map((item, index) => {
+                                    return (
+                                        <div key={index} >
+                                            <div className="wrapimgvido" >
+                                                <video className="video" id="videoPlay" poster={item.img}
+                                                    preload="auto" onClick={this.handlePlay.bind(this, item.id)} >
+                                                    <source src={item.url} type="video/mp4">
+                                                    </source>
+                                                </video>
+                                            </div>
+                                            <h3>{item.name}:{item.songName}</h3>
+                                            <div className="shadow"></div>
+                                        </div>
+                                    )
+                                })
+                            }
+                            <div className={"more_video"} onClick={this.morevideo.bind(this)}>点击加载更多</div>
+                        </React.Fragment>
                     )
                 }
             </div>
-
         )
     }
-
+    async  morevideo(){
+        this.ind+=1
+        this.getvideo(this.ind)
+    }
 
     async componentDidMount() {
+        this.getvideo(0)
+    }
+    async  getvideo(ind){
         var arr = this.state.arrUrl;
         const { data } = await
-            axios.get("/top/mv?limit=10")
-        // console.log(data,12345)
+            axios.get("/top/mv?offset="+ind+"&limit=10")
         this.setState({
             data: data
         })

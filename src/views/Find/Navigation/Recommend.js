@@ -3,6 +3,7 @@ import axios from "axios";
 import {
     Link,
 } from "react-router-dom";
+import { bindCallback } from "_rxjs@6.5.2@rxjs";
 class Recommend extends React.Component {
     constructor() {
         super()
@@ -21,6 +22,11 @@ class Recommend extends React.Component {
                 }
             </div>
         )
+    }
+    componentWillMount(){
+        this.setState=(state,callback)=>{
+            return
+        }
     }
     async  componentDidMount() {
         const data = await axios.get("playlist/detail?id=28769028")

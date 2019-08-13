@@ -56,7 +56,7 @@ class MusicPlayingInterface extends React.Component {
                 </div>
                 <div className={"audio_player_warp"}>
                     <audio className={"audio_player"} src={"https://music.163.com/song/media/outer/url?id=" + this.state.songMsg.songId + ".mp3 "} controls="controls"
-                    // autoPlay="autoplay"
+                    autoPlay="autoplay"
                     >
                     </audio>
                 </div>

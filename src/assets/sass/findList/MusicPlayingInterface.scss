@@ -31,7 +31,6 @@
     .musicPlaying_lyrics{
        margin-top:px2rem(55px);
        overflow: hidden;
-    //    background: #fcc;
        .img_warp{
            height: px2rem(400px);
            padding-top: px2rem(96px);
@@ -39,8 +38,16 @@
                width: px2rem(200px);
                height: px2rem(200px);
                border-radius: 50%;
-               
-           }
+               display: inline-block;
+                overflow: hidden;
+                animation: rotate 12s linear infinite; 
+            }
+            @keyframes rotate{
+                from{
+                transform: rotate(0deg)
+                }
+                to{transform: rotate(360deg)}
+                }     
        }
        ul{ 
           height: px2rem(50px); 
