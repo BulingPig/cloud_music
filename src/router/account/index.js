@@ -16,6 +16,7 @@ import PhoneLogin from "../../views/Account/login/PhoneLogin"
 import Verification from "../../views/Account/login/Verification"
 import PassWord from "../../views/Account/login/PassWord"
 import Register from "../../views/Account/login/Register"
+import ChangePassword from "../../views/Account/login/ChangePassword"
 /**
  * *************************登录以后的动态。关注、粉丝、编辑资料***************************
  */
@@ -75,8 +76,8 @@ const routers=[
      * ******************************我的消息***********
      */
     {
-        to:"/account/information/personalletter",
-        path:"/account/information/personalletter",
+        to:"/account/information/",
+        path:"/account/information/",
         context:"私信",
         exact:true,
         component:PersonalLetter,
@@ -125,7 +126,7 @@ const routers=[
     },
     {
         to:"/account/verification",
-        path:"/account/verification",
+        path:"/account/verification/:a",
         context:"手机号验证",
         component:Verification,
         type:3,
@@ -144,12 +145,20 @@ const routers=[
         component:Register,
         type:3,
     },
+    {
+        to:"/account/ChangePassword",
+        path:"/account/ChangePassword",
+        context:"修改密码",
+        component:ChangePassword,
+        type:3,
+    },
     //登录后的动态关注粉丝编辑资料
     {
         to:"/account/attention",
         path:"/account/attention",
         context:"关注",
         component:Attention,
+        isShow:true,
         type:3,
     },
     {
@@ -157,6 +166,7 @@ const routers=[
         path:"/account/state",
         context:"动态",
         component:State,
+        isShow:true,
         type:3,
     },
     {
@@ -164,6 +174,7 @@ const routers=[
         path:"/account/fans",
         context:"粉丝",
         component:Fans,
+        isShow:true,
         type:3,
     },
     {
@@ -188,8 +199,8 @@ const routers=[
  * *************************点击头像的音乐、动态、我的路由***************************
  */
 {
-    to:"/account/headphoto/photomusic",
-    path:"/account/headphoto/photomusic",
+    to:"/account/headphoto/",
+    path:"/account/headphoto/",
     context:"音乐",
     component:PhotoMusic,
     exact:true,

@@ -12,9 +12,6 @@ export default class PassWord extends React.Component{
             value:props.value
         })
     }
-    componentWillMount(){
-        console.log(1122211,this.props.location.state)
-    }
     render(){
         return(
             <div>
@@ -38,7 +35,7 @@ export default class PassWord extends React.Component{
                 {/* 按钮 */}
                 <input className="phone-login-next" ref="nextBackgroud" 
                 onClick={()=>{this.onclickTo()}} type="button" value="立即登录" style={{color:"#fff"}}/>
-                <p className="rePassword" onClick={()=>{this.props.history.push("/account/Register")}}>重设密码<span className="iconfont icon-you"></span></p>
+                <p className="rePassword" onClick={()=>{this.props.history.push("/account/ChangePassword")}}>重设密码<span className="iconfont icon-you"></span></p>
                 <div className="popBox" ref="reminder">
                         手机号或密码错误
                   </div>
@@ -53,4 +50,7 @@ export default class PassWord extends React.Component{
         this.props.history.push("/")
        })
     }
+    // componentDidMount(){
+    //     console.log(this.props)
+    // }
 }

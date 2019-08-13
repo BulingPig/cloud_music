@@ -14,8 +14,9 @@ export default class SongListDetail extends Component {
     }
     
     render() {
+        //console.log(5555555,this.props)
         //console.log(111111,this.state.songDetailArr)
-        //console.log(222222,this.state.songListDetailMsg)
+        console.log(222222,this.state.songListDetailMsg)
         return (
             <div id="songListDetail">
                 <div className="wrap" id="songListPic">
@@ -28,14 +29,23 @@ export default class SongListDetail extends Component {
                         <span className="iconfont icon-gengduo"></span>
                 </div>
                 <div className="songListTitle">
-                    <input type="text" placeholder="搜索歌单内的歌曲"/>
+                    <input type="text" placeholder="搜索歌单内的歌曲" ref={"searchSong"} />
                     <div className="songListPic">
                         <div className="songListBg">
                             <img src={this.state.songListDetailMsg.songListPic} alt=""/>
                             <span className="iconfont icon-z"> {this.state.songListDetailMsg.playCount}</span>
                         </div>
                         <div className="songListName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.songListDetailMsg.songListName}</div>
-                        <span className="authorHeadPicUrl"><img src={this.state.songListDetailMsg.authorHeadPicUrl} alt=""/></span>
+                        <span className="authorHeadPicUrl" onClick={()=>{
+                            this.props.history.push(
+                                {   
+                                    pathname:"/account/headphoto",
+                                    state:{
+                                        userId:this.state.songListDetailMsg.authorId
+                                    }
+                                }
+                                )
+                        }}><img src={this.state.songListDetailMsg.authorHeadPicUrl} alt=""/></span>
                         <span className="authorName">{this.state.songListDetailMsg.authorName}</span>              
                     </div>
                 </div>
@@ -53,7 +63,15 @@ export default class SongListDetail extends Component {
                    {
                        this.state.songDetailArr.map((v,i)=>{
                            return(
-                               <div className="loopSongList" key={i}>
+                               <div className="loopSongList" key={i} onClick={()=>{this.props.history.push({
+                                   pathname:"/bofang",
+                                   state:{
+                                    songName:v.songName,
+                                    songId:v.songId,
+                                    songAuthorName:v.songAuthorName,
+                                    songPic:v.songPic
+                                   }
+                               })}} >
                                    <span className="order">{i+1}</span>
                                    <span className="songMsg">
                                        <b className="songName">{v.songName}</b>
@@ -81,7 +99,7 @@ export default class SongListDetail extends Component {
         var songListDetailMsg = this.state.songListDetailMsg;
 
         const data = await axios.get("/playlist/detail?id="+this.props.match.params.id)
-        console.log(data)
+        //console.log(8888888888,data)
         for(var i=0; i<data.playlist.tracks.length; i++){
             songDetailArr.push({
                 songName:data.playlist.tracks[i].name,
@@ -98,6 +116,7 @@ export default class SongListDetail extends Component {
         songListDetailMsg.authorName = data.playlist.creator.nickname;
         songListDetailMsg.authorHeadPicUrl = data.playlist.creator.avatarUrl;
         songListDetailMsg.authorBgPicUrl = data.playlist.creator.backgroundUrl;
+        songListDetailMsg.authorId = data.playlist.creator.userId;
         
         this.setState({
             songDetailArr:songDetailArr,

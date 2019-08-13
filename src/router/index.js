@@ -9,6 +9,8 @@ import my_tabRouter from './my/tabComponents'
 import findRouterList from "./Find"
 import videoList from "./video"
 
+//评论
+import SongReviews from './../components/SongReviews/SongReviews'
 
 
 const routers = [
@@ -73,6 +75,19 @@ const routers = [
         iconfontName:"iconfont icon-ren",
         component:Account,
         isShow:true,
+        meta:{
+            title:"网易云音乐"
+        }
+    },
+    {
+        to:"/SongReviews",
+        path:"/SongReviews/:id",
+        // type:"bofang",
+        exact:true,  
+        context:"评论",
+        iconfontName:"iconfont icon-ren",
+        component:SongReviews,
+        isShow:false,
         meta:{
             title:"网易云音乐"
         }

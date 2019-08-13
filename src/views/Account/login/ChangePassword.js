@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-export default class Register extends React.Component{
+export default class ChangePassword extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -40,7 +40,7 @@ export default class Register extends React.Component{
                 <input className="getNum" type="text" ref="captcha" placeholder="验证码" onChange={()=>{this.changecaptch()}}/>
                 <input className="getNumBtn" type="button" value="获取验证码" onClick={()=>{this.getcaptch()}}/>
                 </div>
-                <input className="newRegister" type="button" value="注册" onClick={()=>{this.register()}}/>
+                <input className="newRegister" type="button" value="确认修改" onClick={()=>{this.register()}}/>
             </div>
         )
     }
@@ -72,7 +72,7 @@ export default class Register extends React.Component{
         axios.get("/register/cellphone?phone="+phone+"&password="+password+"&captcha="+captcha+"&nickname="+nickname)
         .then(data=>{
             localStorage.phone = phone;
-            this.props.history.push("/account/phonelogin")
+            this.props.history.push("/account/password")
         })
         
     }
