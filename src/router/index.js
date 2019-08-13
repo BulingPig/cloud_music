@@ -7,6 +7,7 @@ import accountRouters from "./account"
 import my_middleRouter from './my/middlerouters'
 import my_tabRouter from './my/tabComponents'
 import findRouterList from "./Find"
+import videoList from "./video"
 
 
 
@@ -80,6 +81,7 @@ const routers = [
     ...my_middleRouter,
     ...my_tabRouter,
     ...findRouterList,
+    ...videoList,
 
 ]
 

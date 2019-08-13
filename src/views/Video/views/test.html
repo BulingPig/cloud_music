@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个H5播放器video 如何播放暂停</title>
+</head>
+<body>
+ 
+    <video src="http://img.tianxiang.com/d/2018/06/5b1a45f89f96b.mp4" controls="controls"></video>
+    <video src="http://vodfile12.news.cn/data/cdn_transfer/1F/FE/1f74d72eedda3dc922b3487f49619c4730b4fbfe.mp4" controls="controls"></video>
+ 
+    <script type="text/javascript">
+        var videos = document.getElementsByTagName('video');
+            for (var i = videos.length - 1; i >= 0; i--) {
+                (function(){
+                    var p = i;
+                    videos[p].addEventListener('play',function(){
+                        pauseAll(p);
+                    })
+                })()
+            }
+            function pauseAll(index){
+                for (var j = videos.length - 1; j >= 0; j--) {
+                    if (j!=index) videos[j].pause();
+                }
+            };
+    </script>
+    
+</body>
+</html>

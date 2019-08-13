@@ -2,7 +2,7 @@
 
 #video{
 // *****************navbar********************
-
+   
     .navBar{
         z-index: 1;
         background: #da3f3b;
@@ -10,7 +10,8 @@
         top:px2rem(0px);
         width: px2rem(375px);
         height: px2rem(94px);
-        overflow:hidden;
+        // overflow:hidden;
+        // margin-right: px2rem(-15px);
         .navoinp{
             display: block;
             width: px2rem(277px);
@@ -25,11 +26,11 @@
             background: #f0d3d2;
             text-align: center;
             border-radius: px2rem(20px);
-            opacity:0.4;
+            opacity:0.5;
             position:absolute;
             border:1px #da3f3b solid;
             outline: none;
-
+            z-index: 2;
         };
     
         .iconone{
@@ -60,6 +61,27 @@
             top:px2rem(28px);
             right:px2rem(15px);
         }
+            .swiper-wrapper{
+            color:white ;
+            margin-top:px2rem(66px);
+            font-size:px2rem(15px);
+            font-weight: 200;
+            .swiper-slide{
+                margin-right:px2rem(29px);
+                color:white  ;
+                a{
+                    color:white;
+                    opacity: 0.8;
+                }
+                a:hover{
+                    color:white;
+                    opacity: 1;
+                    font-weight: 300;
+                }
+            }
+        }
+        
+
    
     }
 // ********************list*****************

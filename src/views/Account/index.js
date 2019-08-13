@@ -241,6 +241,5 @@ export default class Account extends Component {
                 detail:data.profile
             })
         })
-
     }
 }

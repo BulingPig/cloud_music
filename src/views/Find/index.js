@@ -32,7 +32,7 @@ export default class Find extends Component {
                     <Link to={'/Find/Recommend'} > <i className={'iconfont icon-dingdan'} /> 歌单</Link>
                     <Link to={'/Find/Recommend'} > <i className={'iconfont icon-jiezou'} /> 排行榜</Link>
                     <Link to={'/Find/Recommend'} > <i className={'iconfont icon-tubiaozhizuomoban'} /> 电台</Link>
-                    <Link to={'/Find/Live'} > <i className={'iconfont icon-tubiaozhizuomoban'} /> 直播</Link>
+                    <Link to={'/Find/Live'}> <i className={'iconfont icon-tub~iaozhizuomoban'} /> 直播</Link>
                 </div>
                 {/* 推荐歌单 */}
                 <div className={'song_list'}>

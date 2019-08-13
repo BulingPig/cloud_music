@@ -16,9 +16,9 @@ class Recommend extends React.Component {
             <div>
                 推荐
                 {
-                    this.state.shitiaoyinyue.map((v, i) => {
-                        return <p key={i}> <Link  to={'/bofang/'+v.id} >{v.ar[0].name}---{v.name}</Link></p>
-                    })
+                    this.state.shitiaoyinyue.map((v, i) => 
+                        <p key={i}> <Link  to={'/bofang/'+v.id} >{v.ar[0].name}---{v.name}</Link></p>
+                    )
                 }
             </div>
         )

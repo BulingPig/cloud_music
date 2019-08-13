@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 
-export default class List extends Component {
+export default class Mv extends Component {
     constructor() {
         super()
         this.state = {
@@ -12,17 +12,34 @@ export default class List extends Component {
         };
     }
     
-    // handlePlay=()=>{
-    //     var video1 = document.getElementById("videoPlay");
+    handlePlay=(value,e)=>{
+        // var videos = document.getElementsByTagName('video');
+        // for(var i =0 ; i < videos.length; i ++){
+        //     videos[i].pause();
+        // }
+        // // videos.pause();
+            if (e.target.paused) {
+                e.target.play();
+            } else {
+                e.target.pause();
+            }
 
-    //     // video1.οnclick = function () {
-    //         if (video1.paused) {
-    //             video1.play();
-    //         } else {
-    //             video1.pause();
-    //         }
-    //     // }
-    // }
+
+        var videos = document.getElementsByTagName('video');
+        for (var i = videos.length - 1; i >= 0; i--) {
+            (function () {
+                var p = i;
+                videos[p].addEventListener('play', function () {
+                    pauseAll(p);
+                })
+            })()
+        }
+        function pauseAll(index) {
+            for (var j = videos.length - 1; j >= 0; j--) {
+                if (j != index) videos[j].pause();
+            }
+        };
+    }
 
     render() {
         
@@ -35,7 +52,8 @@ export default class List extends Component {
                         return (
                             <div key={index} >
                                 <div className="wrapimgvido" >
-                                    <video className="video" id="videoPlay" poster={item.img}   controls  >
+                                    <video className="video" id="videoPlay" poster={item.img} 
+                                     preload="auto" onClick = {this.handlePlay.bind(this,item.id)} >
                                         <source src={item.url} type="video/mp4">
                                         </source>
                                     </video>
@@ -55,7 +73,8 @@ export default class List extends Component {
     
     async componentDidMount() {
         var arr = this.state.arrUrl;
-        const {data} = await    axios.get("/top/mv?limit=10")
+        const {data} = await 
+         axios.get("/top/mv?limit=10")
         // console.log(data,12345)
             this.setState({
                 data:data
@@ -78,5 +97,4 @@ export default class List extends Component {
                 arrUrl: arr
             })
      }
-     
 }
