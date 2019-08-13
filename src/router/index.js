@@ -7,6 +7,8 @@ import accountRouters from "./account"
 import my_middleRouter from './my/middlerouters'
 import my_tabRouter from './my/tabComponents'
 import findRouterList from "./Find"
+import videoList from "./video"
+
 //评论
 import SongReviews from './../components/SongReviews/SongReviews'
 
@@ -94,6 +96,7 @@ const routers = [
     ...my_middleRouter,
     ...my_tabRouter,
     ...findRouterList,
+    ...videoList,
 
 ]
 

@@ -31,7 +31,7 @@
     .musicPlaying_lyrics{
        margin-top:px2rem(55px);
        overflow: hidden;
-       background: #fcc;
+    //    background: #fcc;
        .img_warp{
            height: px2rem(400px);
            padding-top: px2rem(96px);
@@ -44,14 +44,12 @@
        }
        ul{ 
           height: px2rem(50px); 
-          background-color: antiquewhite;
           display: flex;
           justify-content: space-around;
           align-items: center;
        }
        .lyrics_panel{
            height: px2rem(550px);
-           color: red;
            overflow: hidden;
            .kkkk{
                 height: px2rem(525px);
@@ -66,8 +64,12 @@
         width: 100%;
         position: fixed;
         bottom: px2rem(0px);
-        // background: #fcc;
         padding-top: px2rem(4px);
         height: px2rem(62px);
+        // .audio_player{
+        //     background: #fcc;
+        //     background-size: cover;
+        //     border-radius: 0;
+        // }
     }
 }

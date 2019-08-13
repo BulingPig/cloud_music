@@ -70,8 +70,10 @@ class MusicPlayingInterface extends React.Component {
     }
     async  componentDidMount() {
         const data = await axios.get("/lyric?id=" + this.state.songMsg.songId)
+        const kkkkk = data.lrc.lyric.split("[")       
+        kkkkk.shift()
         this.setState({
-            lrc: data.lrc.lyric.split("[")
+            lrc: kkkkk
         })
     }
 }

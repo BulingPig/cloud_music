@@ -111,7 +111,7 @@ export default class myLoveMusic extends Component {
     }
     async getPlayList(){
         const data = await axios.get("/user/playlist?uid="+localStorage.id)
-        console.log(data)
+        //console.log(data)
         var arr = [];
         for(var i=0; i<data.playlist.length; i++){
             arr.push({

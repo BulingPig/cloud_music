@@ -21,7 +21,7 @@ export default class Attention extends React.Component{
                     this.state.attention.map((v,i)=>{
                         return(
                             <div className="attentionList" key={i}>
-                                <img className="attentionImg" src={v.avatarUrl} alt=""/>
+                                <img className="attentionImg" src={v.avatarUrl} alt=""  onClick={()=>{this.props.history.push({pathname:"/account/HeadPhoto",state:{userId:v.userId}})}}/>
                                 <span className="attentionName">{v.nickname}</span>
                                 <span className="signature">{v.signature}</span>
                             </div>
@@ -35,6 +35,7 @@ export default class Attention extends React.Component{
     componentDidMount(){
         axios.get("/user/follows?uid="+localStorage.id)
         .then(data=>{
+            console.log(data.follow)
             this.setState({
                 attention:data.follow
             })

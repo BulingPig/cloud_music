@@ -29,6 +29,6 @@ export default class Login extends React.Component{
         )
     }
     componentWillMount(){
-        console.log(this.props)
+        // console.log(this.props)
     }
 }

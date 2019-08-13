@@ -33,7 +33,7 @@ export default class PersonalLetter extends React.Component{
         var arr = this.state.personalList;
         axios.get("/msg/private")
         .then(data=>{
-            // console.log("私信列表",data.msgs.length)
+            // console.log("私信列表",data.msgs)
             if(data.msgs.length>0){
                 this.refs.yes.style.display="bloack";
                 this.refs.no.style.display="none";

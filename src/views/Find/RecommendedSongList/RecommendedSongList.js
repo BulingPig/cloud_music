@@ -16,7 +16,12 @@ class RecommendedSongList extends React.Component {
                 <ul>
                     {
                         this.state.recommendedSongList.map((v, i) => {
-                            return <li key={i} onClick={()=>this.props.history.push('/my/SongListDetail/'+v.id)}><img src={v.picUrl} alt="" /><span> {v.name}</span></li>
+                            return (
+                                <li key={i} onClick={()=>this.props.history.push('/my/SongListDetail/'+v.id)}>
+                                    <img src={v.picUrl} alt="" />
+                                    <span> {v.name}</span>
+                                </li>
+                            )
                         })
                     }
                 </ul>
