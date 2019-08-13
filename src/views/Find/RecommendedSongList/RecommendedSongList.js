@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom"
-import { from } from "_array-flatten@2.1.2@array-flatten";
+
 class RecommendedSongList extends React.Component {
     constructor() {
         super()

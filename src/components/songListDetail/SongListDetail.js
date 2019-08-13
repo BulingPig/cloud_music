@@ -14,10 +14,6 @@ export default class SongListDetail extends Component {
     }
 
     render() {
-        console.log(5555555,this.props)
-        //console.log(111111,this.state.songDetailArr)
-        //console.log(222222,this.state.songListDetailMsg)
-        console.log(77777)
         return (
             <div id="songListDetail">
                 <div className="wrap" id="songListPic">
@@ -88,10 +84,9 @@ export default class SongListDetail extends Component {
     }
     async componentDidMount() {
         var songDetailArr = [];
-        var songListDetailMsg = this.state.songListDetailMsg;
-
-        if (this.props.match.params.id === "tj") {
-            const data = await axios.get("/playlist/detail?id=2910628861")
+        var songListDetailMsg = this.state.songListDetailMsg;      
+        if (this.props.match.params.id === "tj") {           
+            const data = await axios.get("/playlist/detail?id=2019129958")
             for (var i = 0; i < data.playlist.tracks.length; i++) {
                 songDetailArr.push({
                     songName: data.playlist.tracks[i].name,
@@ -99,7 +94,7 @@ export default class SongListDetail extends Component {
                     songAuthorName: data.playlist.tracks[i].ar[0].name,
                     songPic: data.playlist.tracks[i].al.picUrl
                 })
-            }
+            }         
             songListDetailMsg.songListName = data.playlist.name;
             songListDetailMsg.songListPic = data.playlist.coverImgUrl;
             songListDetailMsg.songListDescription = data.playlist.description;
@@ -154,9 +149,5 @@ export default class SongListDetail extends Component {
                 }
             }
         }
-        // const data = await axios.get("/playlist/detail?id="+this.props.match.params.id)
-
-        // console.log(data,111)
-
     }
 }

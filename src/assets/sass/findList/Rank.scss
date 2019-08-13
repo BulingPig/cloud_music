@@ -1,0 +1,70 @@
+@import "../mixin.scss";
+#FindRank{
+    .top_title{
+        height: px2rem(40px);
+        font-size: px2rem(24px);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+   .RankList_official_single_content{
+       display: flex;
+       justify-content: start;
+       padding:px2rem(5px);
+       img{
+           width: px2rem(100px);
+           height: px2rem(100px);
+           margin-right: px2rem(3px);
+       }
+       .RankList_official_content{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: flex-start;
+           flex-wrap: nowrap;
+           align-content: flex-start;
+           span{
+               font-size: px2rem(14px);
+               height: px2rem(33px);
+               overflow: hidden;
+               line-height: px2rem(33px);
+               display: -webkit-box;
+               -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+
+           }
+       }
+   }
+   .more_rank{
+       margin-bottom:px2rem(50px);
+       h3{
+           display: block;
+           padding:px2rem(5px) px2rem(0);
+       }
+    .RankList_more{   
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        .RankList_more_single_content{
+            .RankList_more_img{
+              height: px2rem(100px);
+              width: px2rem(100px);
+            }
+            p{
+                width: px2rem(100px);
+                height: px2rem(40px);
+            }
+        }
+     }
+     .RankList_more:after{     
+         content: "";
+         display: block;
+         width:px2rem(225px);
+         height: px2rem(100px);
+         visibility: hidden;
+     }
+    
+   }
+   
+}

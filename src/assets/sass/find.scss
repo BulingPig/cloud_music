@@ -1,6 +1,7 @@
 @import './mixin.scss';
 @import "./findList/songList.scss";
 @import "./findList/MusicPlayingInterface.scss";
+@import "./findList/Rank.scss";
 #find{
     //头部搜索
     .top_search{
@@ -71,7 +72,7 @@
             li{            
                 width: px2rem(100px);
                 height: px2rem(100px);
-                margin-bottom: px2rem(40px);
+                margin-bottom: px2rem(20px);
                 font-size: px2rem(12px);
                 span{                  
                     display: flex;
@@ -84,5 +85,19 @@
                 }
             }
         }     
+    }
+    .new_pan{
+        padding-bottom: px2rem(30px);
+        ul{
+            margin-bottom: px2rem(30px);
+            li{
+                h5{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                }
+            }
+        }
     }
 }

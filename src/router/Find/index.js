@@ -4,6 +4,7 @@ import SongList from "../../views/Find/Navigation/SongList"
 import Rank from "../../views/Find/Navigation/Rank"
 import RadioStation from "../../views/Find/Navigation/RadioStation"
 import Live from "../../views/Find/Navigation/Live"
+
 export default [
     {
         to: "/Find/recommend",
@@ -84,4 +85,5 @@ export default [
             title: "播放"
         }
     },
+    
 ]

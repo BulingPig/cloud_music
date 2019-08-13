@@ -6,9 +6,14 @@
         height: px2rem(55px);
         position: fixed;
         background: #fff;
-        h3{
-            height: px2rem(25px);         
-        }
+        .top_title{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            h3{
+                height: px2rem(25px);         
+            }
+        }     
         ul{
             color: red;
             height: px2rem(30px);
@@ -18,6 +23,7 @@
     }
     .song_list_show{      
         margin-top: px2rem(55px);
+        padding: px2rem(8px) px2rem(0px) px2rem(50px);
         background: #fcc;
         overflow: hidden;
         display: flex;
@@ -25,6 +31,14 @@
         flex-wrap: wrap; 
         div{
             width: px2rem(100px);
+            margin-bottom: px2rem(5px);
+            p{
+                height: px2rem(38px);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+            }
         }   
     }
 }

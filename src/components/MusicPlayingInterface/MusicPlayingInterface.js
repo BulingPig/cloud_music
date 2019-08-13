@@ -15,8 +15,6 @@ class MusicPlayingInterface extends React.Component {
         })
     }
     render() {
-        //console.log(this.state.songMsg)
-        //console.log(this.props,232323)
         return (
             <div id={"musicPlayingInterface"}>
                 <div className={"top_title"}>
@@ -49,7 +47,7 @@ class MusicPlayingInterface extends React.Component {
                                         <li> <i className={'iconfont icon-xin'} /> </li>
                                         <li> <i className={'iconfont icon-icon--'} /> </li>
                                         <li> <i className={'iconfont icon-xin'} /> </li>
-                                        <li onClick={()=>this.props.history.push('/SongReviews/'+this.props.match.params.songid)}> <i className={'iconfont icon-icon--1'} /> </li>
+                                        <li onClick={()=>this.props.history.push('/SongReviews/'+this.state.songMsg.songId)}> <i className={'iconfont icon-icon--1'} /> </li>
                                         <li> <i className={'iconfont icon-gengduo'} /> </li>
                                     </ul>
                                 </>
@@ -65,8 +63,7 @@ class MusicPlayingInterface extends React.Component {
             </div>
         )
     }
-    lrcIsShow() {
-        
+    lrcIsShow() {       
         this.setState({
             isShowLrc: !this.state.isShowLrc
         })
